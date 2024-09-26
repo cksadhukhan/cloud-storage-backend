@@ -4,6 +4,7 @@ import {
   validationErrorResponse,
 } from "./response.utils";
 import { storage, upload } from "./file-upload.utils";
+import { calculateFileHash } from "./hash-generator.utils";
 
 export {
   successResponse,
@@ -11,4 +12,5 @@ export {
   validationErrorResponse,
   storage,
   upload,
+  calculateFileHash,
 };

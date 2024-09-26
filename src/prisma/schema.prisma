@@ -15,9 +15,53 @@ datasource db {
 }
 
 model User {
-  id        Int      @id @default(autoincrement())
-  email     String   @unique
-  password  String
+  id             String           @id @default(uuid())
+  email          String           @unique
+  password       String
+  createdAt      DateTime         @default(now())
+  updatedAt      DateTime         @updatedAt
+  files          File[]           @relation("FileOwner")
+  FilePermission FilePermission[]
+}
+
+model File {
+  id             String           @id @default(uuid())
+  originalName   String
+  virtualPath    String
+  filename       String
+  userId         String
+  createdAt      DateTime         @default(now())
+  currenthash    String           @default("")
+  currentVersion Int              @default(0)
+  versions       FileVersion[]
+  permissions    FilePermission[]
+
+  User User @relation("FileOwner", fields: [userId], references: [id])
+}
+
+model FileVersion {
+  id        String   @id @default(uuid())
+  fileId    String
+  version   Int
+  filename  String
+  hash      String   @default("")
   createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+
+  File File @relation(fields: [fileId], references: [id])
+}
+
+model FilePermission {
+  id        String  @id @default(uuid())
+  fileId    String
+  userId    String
+  canRead   Boolean @default(false)
+  canWrite  Boolean @default(false)
+  canDelete Boolean @default(false)
+
+  // owner user[]
+
+  File File @relation(fields: [fileId], references: [id])
+  User User @relation(fields: [userId], references: [id])
+
+  @@unique([fileId, userId])
 }
