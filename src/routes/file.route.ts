@@ -8,35 +8,65 @@ import { grantPermissions, uploadFiles } from "../controllers";
 
 const router = Router();
 
-// router.post(
-//   "/upload",
-//   authenticate,
-//   upload.single("file"),
-//   async (req: Request, res: Response) => {
-//     if (!req.file) {
-//       return res.status(400).send("No file uploaded");
-//     }
-//     res.send("File uploaded successfully.");
-//   }
-// );
-
-// // Handle file download with streaming
-// router.get(":id/download", authenticate, (req: Request, res: Response) => {
-//   const filePath = path.join(__dirname, "../../uploads", req.params.filename);
-//   fs.access(filePath, fs.constants.F_OK, (err) => {
-//     if (err) {
-//       return res.status(404).send("File not found");
-//     }
-
-//     const readStream = fs.createReadStream(filePath);
-//     readStream.pipe(res);
-//   });
-// });
-
-// Upload file route
+/**
+ * @swagger
+ * /api/v1/file/upload:
+ *   post:
+ *     summary: Upload a file
+ *     tags:
+ *       - File
+ *     security:
+ *       - bearerAuth: []  # Assuming you're using bearer token authentication
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         multipart/form-data:
+ *           schema:
+ *             type: object
+ *             properties:
+ *               file:
+ *                 type: string
+ *                 format: binary
+ *     responses:
+ *       200:
+ *         description: File uploaded successfully
+ *       401:
+ *         description: Unauthorized - Invalid token
+ *       400:
+ *         description: Bad request - Invalid file
+ */
 router.post("/upload", authenticate, upload.single("file"), uploadFiles);
 
-// Grant permission route
+/**
+ * @swagger
+ * /api/v1/file/permissions:
+ *   post:
+ *     summary: Grant permissions to a user for a file
+ *     tags:
+ *       - File
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             properties:
+ *               fileId:
+ *                 type: string
+ *               userId:
+ *                 type: string
+ *               canRead:
+ *                 type: boolean
+ *               canWrite:
+ *                 type: boolean
+ *               canDelete:
+ *                 type: boolean
+ *     responses:
+ *       200:
+ *         description: Permissions granted successfully
+ *       400:
+ *         description: Bad request
+ */
 router.post("/permissions", grantPermissions);
 
 export default router;
