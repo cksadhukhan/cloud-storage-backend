@@ -1,0 +1,36 @@
+auth_enabled: false
+
+server:
+  http_listen_port: 3100
+
+ingester:
+  wal:
+    enabled: true
+    dir: /loki/wal
+
+  lifecycler:
+    ring:
+      kvstore:
+        store: inmemory # Use in-memory store for ring in single-node setups
+      replication_factor: 1 # Set replication factor to 1 for single instance
+
+schema_config:
+  configs:
+    - from: 2020-10-10
+      store: boltdb-shipper # Switch to boltdb-shipper for file-based storage
+      object_store: filesystem # Store the index on the local filesystem
+      schema: v11
+      index:
+        prefix: index_
+        period: 24h
+
+storage_config:
+  boltdb_shipper:
+    active_index_directory: /loki/index
+    cache_location: /loki/cache
+    shared_store: filesystem
+  filesystem:
+    directory: /loki/chunks # Directory for storing log chunks
+
+limits_config:
+  enforce_metric_name: false

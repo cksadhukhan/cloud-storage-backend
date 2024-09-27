@@ -25,7 +25,7 @@ app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocs));
 
 app.use("/api/v1/auth", authRoutes);
 app.use("/api/v1/profile", profileRoutes);
-app.use("/api/v1/file", fileRoutes);
+app.use("/api/v1/files", fileRoutes);
 
 const PORT = process.env.PORT || 8000;
 app.listen(PORT, () => {

@@ -1,0 +1,12 @@
+# prometheus/prometheus.yml
+global:
+  scrape_interval: 15s
+
+scrape_configs:
+  - job_name: "loki"
+    static_configs:
+      - targets: ["loki:3100"]
+
+  - job_name: "node_app" # Replace with your application
+    static_configs:
+      - targets: ["192.168.1.9:8000"] # Replace with your app's address
