@@ -1,6 +1,8 @@
 import { Router } from "express";
 import passport from "passport";
 import { login, register } from "../controllers";
+import { validateRequest } from "../middlewares";
+import { createUserSchema } from "../models/user.schema";
 
 const router = Router();
 
@@ -28,7 +30,7 @@ const router = Router();
  *       400:
  *         description: Bad request
  */
-router.post("/register", register);
+router.post("/register", validateRequest(createUserSchema), register);
 
 /**
  * @swagger

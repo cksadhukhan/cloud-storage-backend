@@ -2,9 +2,10 @@ import { Request, Response } from "express";
 import passport from "passport";
 import { loginUser, registerUser } from "../services";
 import { errorResponse, successResponse } from "../utils";
+import { CreateUserInput } from "../models/user.schema";
 
 export const register = async (req: Request, res: Response) => {
-  const { email, password } = req.body;
+  const { email, password }: CreateUserInput = req.body;
   try {
     const user = await registerUser(email, password);
     // @ts-ignore

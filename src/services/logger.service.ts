@@ -1,6 +1,8 @@
 import { Request, Response, NextFunction } from "express";
 import { createLogger, format, transports } from "winston";
 import { join } from "path";
+import LokiTransport from "winston-loki"; // Loki transport for Winston
+
 const { combine, timestamp, printf, errors } = format;
 
 // Custom format for logs
@@ -29,6 +31,13 @@ export const logger = createLogger({
     new transports.File({
       filename: join(LOG_DIR, "logs/error.log"),
       level: "error",
+    }),
+    new LokiTransport({
+      host: "http://localhost:3100", // Loki host, make sure it's reachable
+      json: true, // Send logs in JSON format
+      labels: { app: "node_app" }, // Add custom labels to the logs
+      format: combine(timestamp(), logFormat),
+      // Optional: Add retries, basicAuth, etc.
     }),
   ],
 });
