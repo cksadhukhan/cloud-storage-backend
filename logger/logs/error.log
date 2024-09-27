@@ -1,1 +1,2 @@
 2024-09-28 02:28:43 [error] : GET /api/v1/files/1b53ce22-5e1c-4c06-9aad-3c277ba5c4c0 - 401 [8 ms]
+2024-09-28 02:42:15 [error] : POST /api/v1/auth/register - 500 [24 ms]
