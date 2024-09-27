@@ -22,10 +22,7 @@ export const uploadFile = async (
     include: { versions: true },
   });
 
-  console.log("ExistingFile ", JSON.stringify(existingFile));
-
   const hash = await calculateFileHash(filename);
-  console.log("Hash ", hash);
 
   if (existingFile) {
     const newVersionNumber = existingFile.versions.length + 1;
@@ -69,8 +66,6 @@ export const uploadFile = async (
         },
       },
     });
-
-    console.log("newFile ", JSON.stringify(newFile));
 
     return newFile;
   }

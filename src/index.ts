@@ -7,6 +7,7 @@ import "./middlewares";
 import { errorHandler } from "./middlewares";
 import { authRoutes, fileRoutes, profileRoutes } from "./routes";
 import { swaggerOptions } from "./config";
+import { logger, requestLogger } from "./services";
 
 dotenv.config();
 
@@ -16,8 +17,10 @@ app.use(passport.initialize());
 
 app.use(errorHandler);
 
+app.use(requestLogger);
+
 // Initialize swagger-jsdoc
-console.log("Initializing Swagger...");
+logger.info("Initializing Swagger...");
 const swaggerDocs = swaggerJsDoc(swaggerOptions);
 
 // Serve swagger docs
@@ -29,5 +32,5 @@ app.use("/api/v1/files", fileRoutes);
 
 const PORT = process.env.PORT || 8000;
 app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
+  logger.info(`Server running on port ${PORT}`);
 });

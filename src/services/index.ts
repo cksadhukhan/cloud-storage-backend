@@ -10,6 +10,7 @@ import {
   restoreFileVersion,
 } from "./file.service";
 import { grantPermission } from "./permission.service";
+import { logger, requestLogger } from "./logger.service";
 
 export {
   registerUser,
@@ -23,4 +24,6 @@ export {
   downloadLatestFile,
   restoreFileVersion,
   grantPermission,
+  logger,
+  requestLogger,
 };
