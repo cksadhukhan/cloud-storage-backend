@@ -7,6 +7,4 @@ register.setDefaultLabels({
 });
 Prometheus.collectDefaultMetrics({ register });
 
-console.log("register", register);
-
 export default register;

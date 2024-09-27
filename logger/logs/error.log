@@ -6,3 +6,19 @@
 2024-09-28 03:32:19 [error] : POST /api/v1/auth/register - 400 [3 ms]
 2024-09-28 03:32:32 [error] : Validation error:
 2024-09-28 03:32:32 [error] : POST /api/v1/auth/register - 400 [3 ms]
+2024-09-27 23:07:13 [error] : PrismaClientInitializationError: Can't reach database server at `localhost:5432`
+
+Please make sure your database server is running at `localhost:5432`.
+    at t (/usr/src/app/node_modules/@prisma/client/runtime/library.js:111:2488)
+2024-09-27 23:07:31 [error] : POST /api/v1/auth/login - 500 [65 ms]
+2024-09-27 23:09:07 [error] : PrismaClientInitializationError: Can't reach database server at `localhost:5432`
+
+Please make sure your database server is running at `localhost:5432`.
+    at t (/usr/src/app/node_modules/@prisma/client/runtime/library.js:111:2488)
+2024-09-27 23:11:07 [error] : POST /api/v1/auth/login - 500 [29 ms]
+2024-09-27 23:11:15 [error] : Validation error:
+2024-09-27 23:11:15 [error] : POST /api/v1/auth/register - 400 [12 ms]
+2024-09-27 23:11:27 [error] : Validation error:
+2024-09-27 23:11:27 [error] : POST /api/v1/auth/register - 400 [4 ms]
+2024-09-27 23:11:46 [error] : POST /api/v1/auth/register - 500 [121 ms]
+2024-09-28 04:44:47 [error] : POST /api/v1/auth/register - 500 [139 ms]

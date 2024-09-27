@@ -8,7 +8,7 @@ import { errorHandler } from "./middlewares";
 import { authRoutes, fileRoutes, profileRoutes } from "./routes";
 import { swaggerOptions } from "./config";
 import { logger, requestLogger } from "./services";
-import { prometheusMetrics } from "./controllers/prometheus.controller";
+import { prometheusMetrics } from "./controllers";
 
 dotenv.config();
 

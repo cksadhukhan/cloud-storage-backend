@@ -8,6 +8,7 @@ import {
   getFileVersions,
   downloadSpecificVersion,
 } from "./file.controller";
+import { prometheusMetrics } from "./prometheus.controller";
 
 export {
   register,
@@ -19,4 +20,5 @@ export {
   downloadLatest,
   getFileVersions,
   downloadSpecificVersion,
+  prometheusMetrics,
 };
