@@ -1,44 +1,17 @@
-2024-09-28 02:28:43 [error] : GET /api/v1/files/1b53ce22-5e1c-4c06-9aad-3c277ba5c4c0 - 401 [8 ms]
-2024-09-28 02:42:15 [error] : POST /api/v1/auth/register - 500 [24 ms]
-2024-09-28 03:25:29 [error] : Validation error:
-2024-09-28 03:25:29 [error] : POST /api/v1/auth/register - 400 [4 ms]
-2024-09-28 03:32:19 [error] : Validation error:
-2024-09-28 03:32:19 [error] : POST /api/v1/auth/register - 400 [3 ms]
-2024-09-28 03:32:32 [error] : Validation error:
-2024-09-28 03:32:32 [error] : POST /api/v1/auth/register - 400 [3 ms]
-2024-09-27 23:07:13 [error] : PrismaClientInitializationError: Can't reach database server at `localhost:5432`
-
-Please make sure your database server is running at `localhost:5432`.
-    at t (/usr/src/app/node_modules/@prisma/client/runtime/library.js:111:2488)
-2024-09-27 23:07:31 [error] : POST /api/v1/auth/login - 500 [65 ms]
-2024-09-27 23:09:07 [error] : PrismaClientInitializationError: Can't reach database server at `localhost:5432`
-
-Please make sure your database server is running at `localhost:5432`.
-    at t (/usr/src/app/node_modules/@prisma/client/runtime/library.js:111:2488)
-2024-09-27 23:11:07 [error] : POST /api/v1/auth/login - 500 [29 ms]
-2024-09-27 23:11:15 [error] : Validation error:
-2024-09-27 23:11:15 [error] : POST /api/v1/auth/register - 400 [12 ms]
-2024-09-27 23:11:27 [error] : Validation error:
-2024-09-27 23:11:27 [error] : POST /api/v1/auth/register - 400 [4 ms]
-2024-09-27 23:11:46 [error] : POST /api/v1/auth/register - 500 [121 ms]
-2024-09-28 04:44:47 [error] : POST /api/v1/auth/register - 500 [139 ms]
-2024-09-28 14:13:51 [error] : POST /api/v1/auth/register - 500 [137 ms]
-2024-09-28 14:20:07 [error] : POST /api/v1/auth/login - 400 [2 ms]
-2024-09-28 14:21:48 [error] : POST /api/v1/auth/login - 400 [1 ms]
-2024-09-28 14:22:03 [error] : POST /api/v1/auth/login - 400 [1 ms]
-2024-09-28 14:43:03 [error] : Validation error:
-2024-09-28 14:43:03 [error] : POST /api/v1/auth/login - 400 [5 ms]
-2024-09-28 14:43:12 [error] : Validation error:
-2024-09-28 14:43:12 [error] : POST /api/v1/auth/login - 400 [4 ms]
-2024-09-28 14:43:17 [error] : Validation error:
-2024-09-28 14:43:17 [error] : POST /api/v1/auth/login - 400 [3 ms]
-2024-09-28 15:39:39 [error] : GET /api/v1/files - 401 [5 ms]
-2024-09-28 15:42:09 [error] : GET /api/v1/files - 401 [3 ms]
-2024-09-28 15:42:14 [error] : GET /api/v1/files - 401 [1 ms]
-2024-09-28 15:42:18 [error] : GET /api/v1/files - 401 [4 ms]
-2024-09-28 16:02:01 [error] : GET /api/v1/files - 401 [5 ms]
-2024-09-28 16:02:24 [error] : GET /api/v1/files/duplicates - 500 [7 ms]
-2024-09-28 16:04:11 [error] : GET /api/v1/files/duplicates - 500 [5 ms]
-2024-09-28 16:05:23 [error] : GET /api/v1/files/duplicates - 500 [18 ms]
-2024-09-28 16:06:30 [error] : GET /api/v1/files/duplicates - 500 [15 ms]
-2024-09-28 16:08:23 [error] : GET /api/v1/files/duplicates - 500 [13 ms]
+2024-09-28 21:52:51 [error] : POST /api/v1/auth/login - 401 [7 ms]
+2024-09-28 21:53:52 [error] : Unauthorized: Invalid token or token not provided
+2024-09-28 21:53:52 [error] : GET /api/v1/files/ - 401 [5 ms]
+2024-09-28 21:54:28 [error] : Unauthorized: Invalid token or token not provided
+2024-09-28 21:54:28 [error] : GET /api/v1/files/259c93b6-6cdd-4e75-9cac-2aa61cad56fc - 401 [4 ms]
+2024-09-28 22:03:44 [error] : Unauthorized: Invalid token or token not provided
+2024-09-28 22:03:44 [error] : GET /api/v1/files/search - 401 [6 ms]
+2024-09-28 22:03:58 [error] : Error: File not found
+    at /Users/chanchal/Workspace/airtribe/cloud-storage/src/services/file.service.ts:111:20
+    at Generator.next (<anonymous>)
+    at fulfilled (/Users/chanchal/Workspace/airtribe/cloud-storage/src/services/file.service.ts:5:58)
+2024-09-28 22:03:58 [error] : GET /api/v1/files/search - 500 [14 ms]
+2024-09-28 22:04:20 [error] : Error: File not found
+    at /Users/chanchal/Workspace/airtribe/cloud-storage/src/services/file.service.ts:111:20
+    at Generator.next (<anonymous>)
+    at fulfilled (/Users/chanchal/Workspace/airtribe/cloud-storage/src/services/file.service.ts:5:58)
+2024-09-28 22:04:20 [error] : GET /api/v1/files/search?description=json - 500 [6 ms]

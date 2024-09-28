@@ -1,513 +1,56 @@
-2024-09-28 02:28:43 [error] : GET /api/v1/files/1b53ce22-5e1c-4c06-9aad-3c277ba5c4c0 - 401 [8 ms]
-2024-09-28 02:29:45 [info] : Initializing Swagger...
-2024-09-28 02:29:56 [info] : Initializing Swagger...
-2024-09-28 02:29:56 [info] : Server running on port 8000
-2024-09-28 02:30:16 [info] : Initializing Swagger...
-2024-09-28 02:30:16 [info] : Server running on port 8000
-2024-09-28 02:30:16 [info] : Database Connected!
-2024-09-28 02:30:37 [info] : Initializing Swagger...
-2024-09-28 02:30:37 [info] : Server running on port 8000
-2024-09-28 02:30:37 [info] : Database Connected!
-2024-09-28 02:30:41 [info] : Initializing Swagger...
-2024-09-28 02:30:41 [info] : Server running on port 8000
-2024-09-28 02:30:41 [info] : Database Connected!
-2024-09-28 02:42:15 [error] : POST /api/v1/auth/register - 500 [24 ms]
-2024-09-28 03:20:11 [info] : Initializing Swagger...
-2024-09-28 03:20:11 [info] : Server running on port 8000
-2024-09-28 03:20:11 [info] : Database Connected!
-2024-09-28 03:20:49 [info] : Initializing Swagger...
-2024-09-28 03:20:49 [info] : Server running on port 8000
-2024-09-28 03:20:49 [info] : Database Connected!
-2024-09-28 03:21:06 [info] : Initializing Swagger...
-2024-09-28 03:21:06 [info] : Server running on port 8000
-2024-09-28 03:21:06 [info] : Database Connected!
-2024-09-28 03:21:10 [info] : Initializing Swagger...
-2024-09-28 03:21:10 [info] : Server running on port 8000
-2024-09-28 03:21:10 [info] : Database Connected!
-2024-09-28 03:21:41 [info] : Initializing Swagger...
-2024-09-28 03:21:41 [info] : Server running on port 8000
-2024-09-28 03:21:41 [info] : Database Connected!
-2024-09-28 03:22:25 [info] : Initializing Swagger...
-2024-09-28 03:22:26 [info] : Server running on port 8000
-2024-09-28 03:22:26 [info] : Database Connected!
-2024-09-28 03:22:37 [info] : Initializing Swagger...
-2024-09-28 03:22:38 [info] : Server running on port 8000
-2024-09-28 03:22:38 [info] : Database Connected!
-2024-09-28 03:22:46 [info] : Initializing Swagger...
-2024-09-28 03:22:46 [info] : Server running on port 8000
-2024-09-28 03:22:46 [info] : Database Connected!
-2024-09-28 03:23:18 [info] : Initializing Swagger...
-2024-09-28 03:23:18 [info] : Server running on port 8000
-2024-09-28 03:23:18 [info] : Database Connected!
-2024-09-28 03:23:21 [info] : Initializing Swagger...
-2024-09-28 03:23:21 [info] : Server running on port 8000
-2024-09-28 03:23:21 [info] : Database Connected!
-2024-09-28 03:25:12 [info] : Initializing Swagger...
-2024-09-28 03:25:12 [info] : Server running on port 8000
-2024-09-28 03:25:12 [info] : Database Connected!
-2024-09-28 03:25:29 [error] : Validation error:
-2024-09-28 03:25:29 [error] : POST /api/v1/auth/register - 400 [4 ms]
-2024-09-28 03:27:46 [info] : Initializing Swagger...
-2024-09-28 03:27:46 [info] : Server running on port 8000
-2024-09-28 03:27:46 [info] : Database Connected!
-2024-09-28 03:27:48 [info] : Initializing Swagger...
-2024-09-28 03:27:48 [info] : Server running on port 8000
-2024-09-28 03:27:48 [info] : Database Connected!
-2024-09-28 03:28:04 [info] : Initializing Swagger...
-2024-09-28 03:28:04 [info] : Server running on port 8000
-2024-09-28 03:28:04 [info] : Database Connected!
-2024-09-28 03:30:49 [info] : Initializing Swagger...
-2024-09-28 03:30:49 [info] : Server running on port 8000
-2024-09-28 03:30:49 [info] : Database Connected!
-2024-09-28 03:32:13 [info] : Initializing Swagger...
-2024-09-28 03:32:13 [info] : Server running on port 8000
-2024-09-28 03:32:13 [info] : Database Connected!
-2024-09-28 03:32:19 [error] : Validation error:
-2024-09-28 03:32:19 [error] : POST /api/v1/auth/register - 400 [3 ms]
-2024-09-28 03:32:32 [error] : Validation error:
-2024-09-28 03:32:32 [error] : POST /api/v1/auth/register - 400 [3 ms]
-2024-09-28 03:36:10 [info] : Initializing Swagger...
-2024-09-28 03:36:10 [info] : Server running on port 8000
-2024-09-28 03:36:10 [info] : Database Connected!
-2024-09-28 03:50:12 [info] : Initializing Swagger...
-2024-09-28 03:50:12 [info] : Server running on port 8000
-2024-09-28 03:50:12 [info] : Database Connected!
-2024-09-28 03:51:03 [info] : Initializing Swagger...
-2024-09-28 03:51:03 [info] : Server running on port 8000
-2024-09-28 03:51:03 [info] : Database Connected!
-2024-09-28 03:56:18 [info] : Initializing Swagger...
-2024-09-28 03:56:18 [info] : Server running on port 8000
-2024-09-28 03:56:18 [info] : Database Connected!
-2024-09-28 03:59:57 [info] : Initializing Swagger...
-2024-09-28 03:59:57 [info] : Server running on port 8000
-2024-09-28 03:59:57 [info] : Database Connected!
-2024-09-28 04:01:16 [info] : Initializing Swagger...
-2024-09-28 04:01:16 [info] : Server running on port 8000
-2024-09-28 04:01:16 [info] : Database Connected!
-2024-09-28 04:02:34 [info] : Initializing Swagger...
-2024-09-28 04:02:34 [info] : Server running on port 8000
-2024-09-28 04:02:34 [info] : Database Connected!
-2024-09-28 04:03:00 [info] : Initializing Swagger...
-2024-09-28 04:03:00 [info] : Server running on port 8000
-2024-09-28 04:03:00 [info] : Database Connected!
-2024-09-28 04:03:42 [info] : Initializing Swagger...
-2024-09-28 04:03:42 [info] : Server running on port 8000
-2024-09-28 04:03:42 [info] : Database Connected!
-2024-09-28 04:03:57 [info] : Initializing Swagger...
-2024-09-28 04:03:57 [info] : Server running on port 8000
-2024-09-28 04:03:57 [info] : Database Connected!
-2024-09-28 04:04:02 [info] : Initializing Swagger...
-2024-09-28 04:04:02 [info] : Server running on port 8000
-2024-09-28 04:04:02 [info] : Database Connected!
-2024-09-28 04:04:42 [info] : Initializing Swagger...
-2024-09-28 04:04:42 [info] : Server running on port 8000
-2024-09-28 04:04:42 [info] : Database Connected!
-2024-09-28 04:06:59 [info] : Initializing Swagger...
-2024-09-28 04:06:59 [info] : Server running on port 8000
-2024-09-28 04:06:59 [info] : Database Connected!
-2024-09-28 04:07:23 [info] : Initializing Swagger...
-2024-09-28 04:07:23 [info] : Server running on port 8000
-2024-09-28 04:07:23 [info] : Database Connected!
-2024-09-28 04:14:54 [info] : Initializing Swagger...
-2024-09-28 04:14:54 [info] : Server running on port 8000
-2024-09-28 04:14:54 [info] : Database Connected!
-2024-09-28 04:15:12 [info] : Initializing Swagger...
-2024-09-28 04:15:12 [info] : Server running on port 8000
-2024-09-28 04:15:12 [info] : Database Connected!
-2024-09-28 04:16:06 [info] : Initializing Swagger...
-2024-09-28 04:16:06 [info] : Server running on port 8000
-2024-09-28 04:16:06 [info] : Database Connected!
-2024-09-28 04:17:03 [info] : Initializing Swagger...
-2024-09-28 04:17:03 [info] : Server running on port 8000
-2024-09-28 04:17:03 [info] : Database Connected!
-2024-09-28 04:19:32 [info] : Initializing Swagger...
-2024-09-28 04:19:32 [info] : Server running on port 8000
-2024-09-28 04:19:32 [info] : Database Connected!
-2024-09-28 04:20:59 [info] : Initializing Swagger...
-2024-09-28 04:20:59 [info] : Server running on port 8000
-2024-09-28 04:21:00 [info] : Database Connected!
-2024-09-28 04:21:14 [info] : Initializing Swagger...
-2024-09-28 04:21:14 [info] : Server running on port 8000
-2024-09-28 04:21:14 [info] : Database Connected!
-2024-09-27 23:07:12 [info] : Initializing Swagger...
-2024-09-27 23:07:13 [info] : Server running on port 8000
-2024-09-27 23:07:13 [error] : PrismaClientInitializationError: Can't reach database server at `localhost:5432`
-
-Please make sure your database server is running at `localhost:5432`.
-    at t (/usr/src/app/node_modules/@prisma/client/runtime/library.js:111:2488)
-2024-09-27 23:07:31 [error] : POST /api/v1/auth/login - 500 [65 ms]
-2024-09-27 23:09:07 [info] : Initializing Swagger...
-2024-09-27 23:09:07 [info] : Server running on port 8000
-2024-09-27 23:09:07 [error] : PrismaClientInitializationError: Can't reach database server at `localhost:5432`
-
-Please make sure your database server is running at `localhost:5432`.
-    at t (/usr/src/app/node_modules/@prisma/client/runtime/library.js:111:2488)
-2024-09-27 23:10:32 [info] : Initializing Swagger...
-2024-09-27 23:10:32 [info] : Server running on port 8000
-2024-09-27 23:10:32 [info] : Database Connected!
-2024-09-27 23:11:07 [error] : POST /api/v1/auth/login - 500 [29 ms]
-2024-09-27 23:11:15 [error] : Validation error:
-2024-09-27 23:11:15 [error] : POST /api/v1/auth/register - 400 [12 ms]
-2024-09-27 23:11:27 [error] : Validation error:
-2024-09-27 23:11:27 [error] : POST /api/v1/auth/register - 400 [4 ms]
-2024-09-27 23:11:46 [error] : POST /api/v1/auth/register - 500 [121 ms]
-2024-09-28 04:44:43 [info] : Initializing Swagger...
-2024-09-28 04:44:43 [info] : Server running on port 8000
-2024-09-28 04:44:43 [info] : Database Connected!
-2024-09-28 04:44:47 [error] : POST /api/v1/auth/register - 500 [139 ms]
-2024-09-28 04:44:52 [info] : POST /api/v1/auth/login - 200 [102 ms]
-2024-09-28 14:13:51 [error] : POST /api/v1/auth/register - 500 [137 ms]
-2024-09-28 14:19:35 [info] : POST /api/v1/auth/login - 200 [123 ms]
-2024-09-28 14:20:07 [error] : POST /api/v1/auth/login - 400 [2 ms]
-2024-09-28 14:21:32 [info] : Initializing Swagger...
-2024-09-28 14:21:32 [info] : Server running on port 8000
-2024-09-28 14:21:32 [info] : Database Connected!
-2024-09-28 14:21:36 [info] : POST /api/v1/auth/login - 200 [108 ms]
-2024-09-28 14:21:48 [error] : POST /api/v1/auth/login - 400 [1 ms]
-2024-09-28 14:22:03 [error] : POST /api/v1/auth/login - 400 [1 ms]
-2024-09-28 14:23:34 [info] : Initializing Swagger...
-2024-09-28 14:23:34 [info] : Server running on port 8000
-2024-09-28 14:23:34 [info] : Database Connected!
-2024-09-28 14:27:38 [info] : Initializing Swagger...
-2024-09-28 14:27:38 [info] : Server running on port 8000
-2024-09-28 14:27:38 [info] : Database Connected!
-2024-09-28 14:29:21 [info] : Initializing Swagger...
-2024-09-28 14:29:21 [info] : Server running on port 8000
-2024-09-28 14:29:21 [info] : Database Connected!
-2024-09-28 14:30:55 [info] : Initializing Swagger...
-2024-09-28 14:30:55 [info] : Server running on port 8000
-2024-09-28 14:30:55 [info] : Database Connected!
-2024-09-28 14:34:36 [info] : Initializing Swagger...
-2024-09-28 14:34:36 [info] : Server running on port 8000
-2024-09-28 14:34:36 [info] : Database Connected!
-2024-09-28 14:34:56 [info] : Initializing Swagger...
-2024-09-28 14:34:56 [info] : Server running on port 8000
-2024-09-28 14:34:56 [info] : Database Connected!
-2024-09-28 14:36:06 [info] : Initializing Swagger...
-2024-09-28 14:36:06 [info] : Server running on port 8000
-2024-09-28 14:36:06 [info] : Database Connected!
-2024-09-28 14:37:17 [info] : Initializing Swagger...
-2024-09-28 14:37:17 [info] : Server running on port 8000
-2024-09-28 14:37:17 [info] : Database Connected!
-2024-09-28 14:41:47 [info] : Initializing Swagger...
-2024-09-28 14:41:47 [info] : Server running on port 8000
-2024-09-28 14:41:48 [info] : Database Connected!
-2024-09-28 14:42:03 [info] : Initializing Swagger...
-2024-09-28 14:42:03 [info] : Server running on port 8000
-2024-09-28 14:42:03 [info] : Database Connected!
-2024-09-28 14:42:10 [info] : Initializing Swagger...
-2024-09-28 14:42:10 [info] : Server running on port 8000
-2024-09-28 14:42:10 [info] : Database Connected!
-2024-09-28 14:42:53 [info] : Initializing Swagger...
-2024-09-28 14:42:53 [info] : Server running on port 8000
-2024-09-28 14:42:53 [info] : Database Connected!
-2024-09-28 14:43:03 [error] : Validation error:
-2024-09-28 14:43:03 [error] : POST /api/v1/auth/login - 400 [5 ms]
-2024-09-28 14:43:12 [error] : Validation error:
-2024-09-28 14:43:12 [error] : POST /api/v1/auth/login - 400 [4 ms]
-2024-09-28 14:43:17 [error] : Validation error:
-2024-09-28 14:43:17 [error] : POST /api/v1/auth/login - 400 [3 ms]
-2024-09-28 14:43:31 [info] : POST /api/v1/auth/login - 200 [121 ms]
-2024-09-28 14:45:25 [info] : Initializing Swagger...
-2024-09-28 14:45:25 [info] : Server running on port 8000
-2024-09-28 14:45:25 [info] : Database Connected!
-2024-09-28 14:58:01 [info] : Initializing Swagger...
-2024-09-28 14:58:01 [info] : Server running on port 8000
-2024-09-28 14:58:01 [info] : Database Connected!
-2024-09-28 14:58:50 [info] : Initializing Swagger...
-2024-09-28 14:58:50 [info] : Server running on port 8000
-2024-09-28 14:58:50 [info] : Database Connected!
-2024-09-28 14:59:06 [info] : Initializing Swagger...
-2024-09-28 14:59:06 [info] : Server running on port 8000
-2024-09-28 14:59:06 [info] : Database Connected!
-2024-09-28 14:59:35 [info] : Initializing Swagger...
-2024-09-28 14:59:35 [info] : Server running on port 8000
-2024-09-28 14:59:35 [info] : Database Connected!
-2024-09-28 15:00:30 [info] : Initializing Swagger...
-2024-09-28 15:00:30 [info] : Server running on port 8000
-2024-09-28 15:00:30 [info] : Database Connected!
-2024-09-28 15:00:46 [info] : Initializing Swagger...
-2024-09-28 15:00:46 [info] : Server running on port 8000
-2024-09-28 15:00:46 [info] : Database Connected!
-2024-09-28 15:36:03 [info] : Initializing Swagger...
-2024-09-28 15:36:04 [info] : Server running on port 8000
-2024-09-28 15:36:04 [info] : Database Connected!
-2024-09-28 15:36:29 [info] : Initializing Swagger...
-2024-09-28 15:36:29 [info] : Server running on port 8000
-2024-09-28 15:36:29 [info] : Database Connected!
-2024-09-28 15:37:00 [info] : Initializing Swagger...
-2024-09-28 15:37:00 [info] : Server running on port 8000
-2024-09-28 15:37:00 [info] : Database Connected!
-2024-09-28 15:37:36 [info] : Initializing Swagger...
-2024-09-28 15:37:36 [info] : Server running on port 8000
-2024-09-28 15:37:36 [info] : Database Connected!
-2024-09-28 15:39:20 [info] : Initializing Swagger...
-2024-09-28 15:39:20 [info] : Server running on port 8000
-2024-09-28 15:39:20 [info] : Database Connected!
-2024-09-28 15:39:29 [info] : POST /api/v1/auth/login - 200 [134 ms]
-2024-09-28 15:39:39 [error] : GET /api/v1/files - 401 [5 ms]
-2024-09-28 15:39:46 [info] : GET /api/v1/files - 200 [11 ms]
-2024-09-28 15:42:03 [info] : Initializing Swagger...
-2024-09-28 15:42:03 [info] : Server running on port 8000
-2024-09-28 15:42:03 [info] : Database Connected!
-2024-09-28 15:42:06 [info] : GET /api/v1/files - 200 [20 ms]
-2024-09-28 15:42:09 [error] : GET /api/v1/files - 401 [3 ms]
-2024-09-28 15:42:14 [error] : GET /api/v1/files - 401 [1 ms]
-2024-09-28 15:42:18 [error] : GET /api/v1/files - 401 [4 ms]
-2024-09-28 15:43:46 [info] : Initializing Swagger...
-2024-09-28 15:43:46 [info] : Server running on port 8000
-2024-09-28 15:43:46 [info] : Database Connected!
-2024-09-28 15:49:57 [info] : Initializing Swagger...
-2024-09-28 15:49:57 [info] : Server running on port 8000
-2024-09-28 15:49:57 [info] : Database Connected!
-2024-09-28 15:52:29 [info] : GET /api-docs/ - 304 [29 ms]
-2024-09-28 15:52:29 [info] : GET /api-docs/swagger-ui.css - 304 [2 ms]
-2024-09-28 15:52:29 [info] : GET /api-docs/swagger-ui-standalone-preset.js - 304 [2 ms]
-2024-09-28 15:52:29 [info] : GET /api-docs/swagger-ui-init.js - 304 [1 ms]
-2024-09-28 15:52:29 [info] : GET /api-docs/swagger-ui-bundle.js - 200 [20 ms]
-2024-09-28 15:52:29 [info] : GET /api-docs/favicon-32x32.png - 304 [1 ms]
-2024-09-28 15:54:31 [info] : Initializing Swagger...
-2024-09-28 15:54:31 [info] : Server running on port 8000
-2024-09-28 15:54:31 [info] : Database Connected!
-2024-09-28 15:55:44 [info] : Initializing Swagger...
-2024-09-28 15:55:44 [info] : Server running on port 8000
-2024-09-28 15:55:44 [info] : Database Connected!
-2024-09-28 15:55:51 [info] : Initializing Swagger...
-2024-09-28 15:55:51 [info] : Server running on port 8000
-2024-09-28 15:55:51 [info] : Database Connected!
-2024-09-28 16:00:28 [info] : Initializing Swagger...
-2024-09-28 16:00:28 [info] : Server running on port 8000
-2024-09-28 16:00:28 [info] : Database Connected!
-2024-09-28 16:01:54 [info] : Initializing Swagger...
-2024-09-28 16:01:54 [info] : Server running on port 8000
-2024-09-28 16:01:54 [info] : Database Connected!
-2024-09-28 16:02:01 [error] : GET /api/v1/files - 401 [5 ms]
-2024-09-28 16:02:14 [info] : GET /api/v1/files - 200 [43 ms]
-2024-09-28 16:02:24 [error] : GET /api/v1/files/duplicates - 500 [7 ms]
-2024-09-28 16:02:43 [info] : GET /api/v1/files/ - 200 [5 ms]
-2024-09-28 16:02:59 [info] : GET /api/v1/files/1b53ce22-5e1c-4c06-9aad-3c277ba5c4c0/duplicates - 200 [10 ms]
-2024-09-28 16:04:11 [error] : GET /api/v1/files/duplicates - 500 [5 ms]
-2024-09-28 16:05:18 [info] : Initializing Swagger...
-2024-09-28 16:05:19 [info] : Server running on port 8000
-2024-09-28 16:05:19 [info] : Database Connected!
-2024-09-28 16:05:23 [error] : GET /api/v1/files/duplicates - 500 [18 ms]
-2024-09-28 16:06:28 [info] : Initializing Swagger...
-2024-09-28 16:06:28 [info] : Server running on port 8000
-2024-09-28 16:06:28 [info] : Database Connected!
-2024-09-28 16:06:30 [error] : GET /api/v1/files/duplicates - 500 [15 ms]
-2024-09-28 16:06:47 [info] : Initializing Swagger...
-2024-09-28 16:06:47 [info] : Server running on port 8000
-2024-09-28 16:06:47 [info] : Database Connected!
-2024-09-28 16:06:56 [info] : Initializing Swagger...
-2024-09-28 16:06:56 [info] : Server running on port 8000
-2024-09-28 16:06:56 [info] : Database Connected!
-2024-09-28 16:08:17 [info] : Initializing Swagger...
-2024-09-28 16:08:18 [info] : Server running on port 8000
-2024-09-28 16:08:18 [info] : Database Connected!
-2024-09-28 16:08:23 [error] : GET /api/v1/files/duplicates - 500 [13 ms]
-2024-09-28 16:12:19 [info] : GET /api-docs/ - 304 [4 ms]
-2024-09-28 16:12:19 [info] : GET /api-docs/swagger-ui.css - 304 [3 ms]
-2024-09-28 16:12:19 [info] : GET /api-docs/swagger-ui-bundle.js - 304 [3 ms]
-2024-09-28 16:12:19 [info] : GET /api-docs/swagger-ui-standalone-preset.js - 304 [1 ms]
-2024-09-28 16:12:19 [info] : GET /api-docs/swagger-ui-init.js - 200 [0 ms]
-2024-09-28 16:12:20 [info] : GET /api-docs/favicon-32x32.png - 304 [1 ms]
-2024-09-28 16:12:20 [info] : GET /api-docs/favicon-32x32.png - 304 [0 ms]
-2024-09-28 16:13:21 [info] : Initializing Swagger...
-2024-09-28 16:13:21 [info] : Server running on port 8000
-2024-09-28 16:13:21 [info] : Database Connected!
-2024-09-28 16:13:24 [info] : GET /api-docs/ - 304 [8 ms]
-2024-09-28 16:13:24 [info] : GET /api-docs/swagger-ui.css - 304 [3 ms]
-2024-09-28 16:13:24 [info] : GET /api-docs/swagger-ui-bundle.js - 304 [4 ms]
-2024-09-28 16:13:24 [info] : GET /api-docs/swagger-ui-standalone-preset.js - 304 [1 ms]
-2024-09-28 16:13:24 [info] : GET /api-docs/swagger-ui-init.js - 200 [1 ms]
-2024-09-28 16:13:24 [info] : GET /api-docs/favicon-32x32.png - 304 [0 ms]
-2024-09-28 16:13:24 [info] : GET /api-docs/favicon-32x32.png - 304 [0 ms]
-2024-09-28 16:13:27 [info] : GET /api-docs/ - 304 [1 ms]
-2024-09-28 16:13:27 [info] : GET /api-docs/swagger-ui-init.js - 304 [0 ms]
-2024-09-28 16:13:27 [info] : GET /api-docs/swagger-ui.css - 304 [4 ms]
-2024-09-28 16:13:27 [info] : GET /api-docs/swagger-ui-bundle.js - 304 [4 ms]
-2024-09-28 16:13:27 [info] : GET /api-docs/swagger-ui-standalone-preset.js - 304 [4 ms]
-2024-09-28 16:13:27 [info] : GET /api-docs/favicon-32x32.png - 304 [1 ms]
-2024-09-28 16:13:27 [info] : GET /api-docs/favicon-32x32.png - 304 [1 ms]
-2024-09-28 16:14:35 [info] : Initializing Swagger...
-2024-09-28 16:14:36 [info] : Server running on port 8000
-2024-09-28 16:14:36 [info] : Database Connected!
-2024-09-28 16:14:36 [info] : GET /api-docs/ - 304 [6 ms]
-2024-09-28 16:14:36 [info] : GET /api-docs/swagger-ui.css - 304 [3 ms]
-2024-09-28 16:14:36 [info] : GET /api-docs/swagger-ui-bundle.js - 304 [5 ms]
-2024-09-28 16:14:36 [info] : GET /api-docs/swagger-ui-standalone-preset.js - 304 [0 ms]
-2024-09-28 16:14:36 [info] : GET /api-docs/swagger-ui-init.js - 200 [2 ms]
-2024-09-28 16:14:36 [info] : GET /api-docs/favicon-32x32.png - 304 [1 ms]
-2024-09-28 16:14:36 [info] : GET /api-docs/favicon-32x32.png - 304 [0 ms]
-2024-09-28 16:14:51 [info] : Initializing Swagger...
-2024-09-28 16:14:51 [info] : Server running on port 8000
-2024-09-28 16:14:51 [info] : Database Connected!
-2024-09-28 16:14:53 [info] : GET /api-docs/ - 304 [7 ms]
-2024-09-28 16:14:53 [info] : GET /api-docs/swagger-ui.css - 304 [4 ms]
-2024-09-28 16:14:53 [info] : GET /api-docs/swagger-ui-bundle.js - 304 [5 ms]
-2024-09-28 16:14:53 [info] : GET /api-docs/swagger-ui-standalone-preset.js - 304 [1 ms]
-2024-09-28 16:14:53 [info] : GET /api-docs/swagger-ui-init.js - 200 [2 ms]
-2024-09-28 16:14:53 [info] : GET /api-docs/favicon-32x32.png - 304 [1 ms]
-2024-09-28 16:14:53 [info] : GET /api-docs/favicon-32x32.png - 304 [1 ms]
-2024-09-28 16:15:59 [info] : Initializing Swagger...
-2024-09-28 16:15:59 [info] : Server running on port 8000
-2024-09-28 16:15:59 [info] : Database Connected!
-2024-09-28 16:17:11 [info] : Initializing Swagger...
-2024-09-28 16:17:11 [info] : Server running on port 8000
-2024-09-28 16:17:11 [info] : Database Connected!
-2024-09-28 16:17:12 [info] : GET /api-docs/ - 304 [5 ms]
-2024-09-28 16:17:12 [info] : GET /api-docs/swagger-ui.css - 304 [4 ms]
-2024-09-28 16:17:12 [info] : GET /api-docs/swagger-ui-bundle.js - 304 [4 ms]
-2024-09-28 16:17:12 [info] : GET /api-docs/swagger-ui-standalone-preset.js - 304 [0 ms]
-2024-09-28 16:17:12 [info] : GET /api-docs/swagger-ui-init.js - 200 [2 ms]
-2024-09-28 16:17:12 [info] : GET /api-docs/favicon-32x32.png - 304 [0 ms]
-2024-09-28 16:17:12 [info] : GET /api-docs/favicon-32x32.png - 304 [0 ms]
-2024-09-28 16:17:24 [info] : Initializing Swagger...
-2024-09-28 16:17:24 [info] : Server running on port 8000
-2024-09-28 16:17:24 [info] : Database Connected!
-2024-09-28 16:17:25 [info] : GET /api-docs/ - 304 [3 ms]
-2024-09-28 16:17:25 [info] : GET /api-docs/swagger-ui.css - 304 [1 ms]
-2024-09-28 16:17:25 [info] : GET /api-docs/swagger-ui-standalone-preset.js - 304 [2 ms]
-2024-09-28 16:17:25 [info] : GET /api-docs/swagger-ui-bundle.js - 304 [0 ms]
-2024-09-28 16:17:25 [info] : GET /api-docs/swagger-ui-init.js - 200 [1 ms]
-2024-09-28 16:17:25 [info] : GET /api-docs/favicon-32x32.png - 304 [0 ms]
-2024-09-28 16:17:25 [info] : GET /api-docs/favicon-32x32.png - 304 [0 ms]
-2024-09-28 16:17:48 [info] : Initializing Swagger...
-2024-09-28 16:17:48 [info] : Server running on port 8000
-2024-09-28 16:17:48 [info] : Database Connected!
-2024-09-28 17:01:56 [info] : Initializing Swagger...
-2024-09-28 17:01:56 [info] : Server running on port 8000
-2024-09-28 17:01:57 [info] : Database Connected!
-2024-09-28 17:03:16 [info] : Initializing Swagger...
-2024-09-28 17:03:16 [info] : Server running on port 8000
-2024-09-28 17:03:16 [info] : Database Connected!
-2024-09-28 17:05:00 [info] : Initializing Swagger...
-2024-09-28 17:05:01 [info] : Server running on port 8000
-2024-09-28 17:05:01 [info] : Database Connected!
-2024-09-28 17:06:38 [info] : Initializing Swagger...
-2024-09-28 17:06:38 [info] : Server running on port 8000
-2024-09-28 17:06:38 [info] : Database Connected!
-2024-09-28 17:09:38 [info] : Initializing Swagger...
-2024-09-28 17:09:38 [info] : Server running on port 8000
-2024-09-28 17:09:38 [info] : Database Connected!
-2024-09-28 17:10:52 [info] : Initializing Swagger...
-2024-09-28 17:10:52 [info] : Server running on port 8000
-2024-09-28 17:10:52 [info] : Database Connected!
-2024-09-28 17:11:35 [info] : Initializing Swagger...
-2024-09-28 17:11:35 [info] : Server running on port 8000
-2024-09-28 17:11:35 [info] : Database Connected!
-2024-09-28 17:12:55 [info] : Initializing Swagger...
-2024-09-28 17:12:55 [info] : Server running on port 8000
-2024-09-28 17:12:55 [info] : Database Connected!
-2024-09-28 17:13:11 [info] : Initializing Swagger...
-2024-09-28 17:13:12 [info] : Server running on port 8000
-2024-09-28 17:13:12 [info] : Database Connected!
-2024-09-28 17:14:33 [info] : Initializing Swagger...
-2024-09-28 17:14:33 [info] : Server running on port 8000
-2024-09-28 17:14:33 [info] : Database Connected!
-2024-09-28 17:14:58 [info] : Initializing Swagger...
-2024-09-28 17:14:58 [info] : Server running on port 8000
-2024-09-28 17:14:58 [info] : Database Connected!
-2024-09-28 17:15:12 [info] : Initializing Swagger...
-2024-09-28 17:15:13 [info] : Server running on port 8000
-2024-09-28 17:15:13 [info] : Database Connected!
-2024-09-28 17:15:16 [info] : Initializing Swagger...
-2024-09-28 17:15:16 [info] : Server running on port 8000
-2024-09-28 17:15:16 [info] : Database Connected!
-2024-09-28 17:17:47 [info] : Initializing Swagger...
-2024-09-28 17:17:47 [info] : Server running on port 8000
-2024-09-28 17:17:47 [info] : Database Connected!
-2024-09-28 17:17:55 [info] : GET /api-docs/ - 304 [4 ms]
-2024-09-28 17:17:55 [info] : GET /api-docs/swagger-ui.css - 304 [4 ms]
-2024-09-28 17:17:55 [info] : GET /api-docs/swagger-ui-bundle.js - 304 [1 ms]
-2024-09-28 17:17:55 [info] : GET /api-docs/swagger-ui-init.js - 200 [2 ms]
-2024-09-28 17:17:55 [info] : GET /api-docs/swagger-ui-standalone-preset.js - 304 [3 ms]
-2024-09-28 17:17:55 [info] : GET /api-docs/favicon-32x32.png - 304 [0 ms]
-2024-09-28 17:17:55 [info] : GET /api-docs/favicon-32x32.png - 304 [1 ms]
-2024-09-28 17:30:41 [info] : Initializing Swagger...
-2024-09-28 17:30:41 [info] : Server running on port 8000
-2024-09-28 17:30:41 [info] : Database Connected!
-2024-09-28 17:30:49 [info] : GET /api-docs/ - 304 [6 ms]
-2024-09-28 17:30:49 [info] : GET /api-docs/swagger-ui.css - 304 [3 ms]
-2024-09-28 17:30:49 [info] : GET /api-docs/swagger-ui-bundle.js - 304 [4 ms]
-2024-09-28 17:30:49 [info] : GET /api-docs/swagger-ui-standalone-preset.js - 304 [1 ms]
-2024-09-28 17:30:49 [info] : GET /api-docs/swagger-ui-init.js - 200 [0 ms]
-2024-09-28 17:30:49 [info] : GET /api-docs/favicon-32x32.png - 304 [0 ms]
-2024-09-28 17:30:49 [info] : GET /api-docs/favicon-32x32.png - 304 [2 ms]
-2024-09-28 17:55:45 [info] : Initializing Swagger...
-2024-09-28 17:55:46 [info] : Server running on port 8000
-2024-09-28 17:55:46 [info] : Database Connected!
-2024-09-28 17:56:04 [info] : GET /api-docs/ - 304 [6 ms]
-2024-09-28 17:56:04 [info] : GET /api-docs/swagger-ui.css - 304 [3 ms]
-2024-09-28 17:56:04 [info] : GET /api-docs/swagger-ui-bundle.js - 304 [4 ms]
-2024-09-28 17:56:04 [info] : GET /api-docs/swagger-ui-init.js - 200 [1 ms]
-2024-09-28 17:56:04 [info] : GET /api-docs/swagger-ui-standalone-preset.js - 304 [1 ms]
-2024-09-28 17:56:04 [info] : GET /api-docs/favicon-32x32.png - 304 [1 ms]
-2024-09-28 17:56:04 [info] : GET /api-docs/favicon-32x32.png - 304 [2 ms]
-2024-09-28 17:58:39 [info] : Initializing Swagger...
-2024-09-28 17:58:39 [info] : Server running on port 8000
-2024-09-28 17:58:39 [info] : Database Connected!
-2024-09-28 18:03:17 [info] : Initializing Swagger...
-2024-09-28 18:03:17 [info] : Server running on port 8000
-2024-09-28 18:03:17 [info] : Database Connected!
-2024-09-28 18:05:08 [info] : Initializing Swagger...
-2024-09-28 18:05:08 [info] : Server running on port 8000
-2024-09-28 18:05:08 [info] : Database Connected!
-2024-09-28 18:05:14 [info] : Login successful
-2024-09-28 18:05:15 [info] : POST /api/v1/auth/login - 200 [134 ms]
-2024-09-28 18:05:42 [info] : Initializing Swagger...
-2024-09-28 18:05:42 [info] : Server running on port 8000
-2024-09-28 18:05:42 [info] : Database Connected!
-2024-09-28 18:08:49 [info] : Initializing Swagger...
-2024-09-28 18:08:49 [info] : Server running on port 8000
-2024-09-28 18:08:49 [info] : Database Connected!
-2024-09-28 18:08:52 [info] : POST /api/v1/auth/login - 200 [116 ms]
-2024-09-28 18:13:16 [info] : Initializing Swagger...
-2024-09-28 18:13:16 [info] : Server running on port 8000
-2024-09-28 18:13:17 [info] : Database Connected!
-2024-09-28 18:13:20 [info] : Initializing Swagger...
-2024-09-28 18:13:20 [info] : Server running on port 8000
-2024-09-28 18:13:20 [info] : Database Connected!
-2024-09-28 18:15:48 [info] : Initializing Swagger...
-2024-09-28 18:15:48 [info] : Server running on port 8000
-2024-09-28 18:15:48 [info] : Database Connected!
-2024-09-28 18:15:55 [info] : Login successful
-2024-09-28 18:15:55 [info] : POST /api/v1/auth/login - 200 [116 ms]
-2024-09-28 18:16:45 [info] : Initializing Swagger...
-2024-09-28 18:16:46 [info] : Server running on port 8000
-2024-09-28 18:16:46 [info] : Database Connected!
-2024-09-28 18:16:47 [info] : Login successful
-2024-09-28 18:16:47 [info] : POST /api/v1/auth/login - 200 [114 ms]
-2024-09-28 18:17:39 [info] : Initializing Swagger...
-2024-09-28 18:17:39 [info] : Server running on port 8000
-2024-09-28 18:17:39 [info] : Database Connected!
-2024-09-28 18:18:32 [info] : Initializing Swagger...
-2024-09-28 18:18:32 [info] : Server running on port 8000
-2024-09-28 18:18:32 [info] : Database Connected!
-2024-09-28 18:21:04 [info] : Initializing Swagger...
-2024-09-28 18:21:04 [info] : Server running on port 8000
-2024-09-28 18:21:04 [info] : Database Connected!
-2024-09-28 18:26:52 [info] : Initializing Swagger...
-2024-09-28 18:26:52 [info] : Server running on port 8000
-2024-09-28 18:26:52 [info] : Database Connected!
-2024-09-28 18:30:09 [info] : Initializing Swagger...
-2024-09-28 18:30:10 [info] : Server running on port 8000
-2024-09-28 18:30:10 [info] : Database Connected!
-2024-09-28 18:30:17 [info] : Initializing Swagger...
-2024-09-28 18:30:17 [info] : Server running on port 8000
-2024-09-28 18:30:17 [info] : Database Connected!
-2024-09-28 18:37:03 [info] : Initializing Swagger...
-2024-09-28 18:37:03 [info] : Server running on port 8000
-2024-09-28 18:37:03 [info] : Database Connected!
-2024-09-28 18:40:53 [info] : Initializing Swagger...
-2024-09-28 18:40:53 [info] : Server running on port 8000
-2024-09-28 18:40:53 [info] : Database Connected!
-2024-09-28 18:41:33 [info] : Initializing Swagger...
-2024-09-28 18:41:33 [info] : Server running on port 8000
-2024-09-28 18:41:33 [info] : Database Connected!
-2024-09-28 18:42:23 [info] : Initializing Swagger...
-2024-09-28 18:42:23 [info] : Server running on port 8000
-2024-09-28 18:42:23 [info] : Database Connected!
-2024-09-28 18:43:22 [info] : Initializing Swagger...
-2024-09-28 18:43:22 [info] : Server running on port 8000
-2024-09-28 18:43:22 [info] : Database Connected!
+2024-09-28 21:51:48 [info] : Initializing Swagger...
+2024-09-28 21:51:48 [info] : Server running on port 8000
+2024-09-28 21:51:48 [info] : Database Connected!
+2024-09-28 21:52:43 [info] : User registered successfully
+2024-09-28 21:52:43 [info] : POST /api/v1/auth/register - 201 [116 ms]
+2024-09-28 21:52:51 [error] : POST /api/v1/auth/login - 401 [7 ms]
+2024-09-28 21:52:55 [info] : Login successful
+2024-09-28 21:52:55 [info] : POST /api/v1/auth/login - 200 [111 ms]
+2024-09-28 21:53:34 [info] : File uploaded successfully
+2024-09-28 21:53:34 [info] : POST /api/v1/files/upload - 200 [22 ms]
+2024-09-28 21:53:37 [info] : Initializing Swagger...
+2024-09-28 21:53:37 [info] : Server running on port 8000
+2024-09-28 21:53:37 [info] : Database Connected!
+2024-09-28 21:53:42 [info] : File uploaded successfully
+2024-09-28 21:53:42 [info] : POST /api/v1/files/upload - 200 [27 ms]
+2024-09-28 21:53:43 [info] : Initializing Swagger...
+2024-09-28 21:53:44 [info] : Server running on port 8000
+2024-09-28 21:53:44 [info] : Database Connected!
+2024-09-28 21:53:52 [error] : Unauthorized: Invalid token or token not provided
+2024-09-28 21:53:52 [error] : GET /api/v1/files/ - 401 [5 ms]
+2024-09-28 21:54:09 [info] : Files fetched successfully
+2024-09-28 21:54:09 [info] : GET /api/v1/files/ - 200 [13 ms]
+2024-09-28 21:54:28 [error] : Unauthorized: Invalid token or token not provided
+2024-09-28 21:54:28 [error] : GET /api/v1/files/259c93b6-6cdd-4e75-9cac-2aa61cad56fc - 401 [4 ms]
+2024-09-28 21:54:42 [info] : File fetched successfully
+2024-09-28 21:54:42 [info] : GET /api/v1/files/259c93b6-6cdd-4e75-9cac-2aa61cad56fc - 200 [5 ms]
+2024-09-28 22:00:13 [info] : File description updated
+2024-09-28 22:00:13 [info] : PUT /api/v1/files/259c93b6-6cdd-4e75-9cac-2aa61cad56fc - 200 [20 ms]
+2024-09-28 22:00:41 [info] : Duplicates by file ID retrieved successfully
+2024-09-28 22:00:41 [info] : GET /api/v1/files/259c93b6-6cdd-4e75-9cac-2aa61cad56fc/duplicates - 200 [10 ms]
+2024-09-28 22:01:09 [info] : File uploaded successfully
+2024-09-28 22:01:09 [info] : POST /api/v1/files/upload - 200 [26 ms]
+2024-09-28 22:01:11 [info] : Initializing Swagger...
+2024-09-28 22:01:12 [info] : Server running on port 8000
+2024-09-28 22:01:12 [info] : Database Connected!
+2024-09-28 22:01:15 [info] : Files fetched successfully
+2024-09-28 22:01:15 [info] : GET /api/v1/files/ - 200 [17 ms]
+2024-09-28 22:01:22 [info] : Duplicates by file ID retrieved successfully
+2024-09-28 22:01:22 [info] : GET /api/v1/files/259c93b6-6cdd-4e75-9cac-2aa61cad56fc/duplicates - 200 [5 ms]
+2024-09-28 22:03:44 [error] : Unauthorized: Invalid token or token not provided
+2024-09-28 22:03:44 [error] : GET /api/v1/files/search - 401 [6 ms]
+2024-09-28 22:03:58 [error] : Error: File not found
+    at /Users/chanchal/Workspace/airtribe/cloud-storage/src/services/file.service.ts:111:20
+    at Generator.next (<anonymous>)
+    at fulfilled (/Users/chanchal/Workspace/airtribe/cloud-storage/src/services/file.service.ts:5:58)
+2024-09-28 22:03:58 [error] : GET /api/v1/files/search - 500 [14 ms]
+2024-09-28 22:04:20 [error] : Error: File not found
+    at /Users/chanchal/Workspace/airtribe/cloud-storage/src/services/file.service.ts:111:20
+    at Generator.next (<anonymous>)
+    at fulfilled (/Users/chanchal/Workspace/airtribe/cloud-storage/src/services/file.service.ts:5:58)
+2024-09-28 22:04:20 [error] : GET /api/v1/files/search?description=json - 500 [6 ms]
+2024-09-28 22:05:52 [info] : GET /api-docs/swagger-ui.css - 304 [4 ms]
+2024-09-28 22:05:52 [info] : GET /api-docs/swagger-ui-standalone-preset.js - 304 [1 ms]
+2024-09-28 22:05:52 [info] : GET /api-docs/swagger-ui-init.js - 304 [1 ms]
+2024-09-28 22:05:52 [info] : GET /api-docs/swagger-ui-bundle.js - 200 [24 ms]
+2024-09-28 22:05:52 [info] : GET /api-docs/favicon-32x32.png - 304 [2 ms]
