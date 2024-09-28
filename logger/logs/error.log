@@ -22,3 +22,17 @@ Please make sure your database server is running at `localhost:5432`.
 2024-09-27 23:11:27 [error] : POST /api/v1/auth/register - 400 [4 ms]
 2024-09-27 23:11:46 [error] : POST /api/v1/auth/register - 500 [121 ms]
 2024-09-28 04:44:47 [error] : POST /api/v1/auth/register - 500 [139 ms]
+2024-09-28 14:13:51 [error] : POST /api/v1/auth/register - 500 [137 ms]
+2024-09-28 14:20:07 [error] : POST /api/v1/auth/login - 400 [2 ms]
+2024-09-28 14:21:48 [error] : POST /api/v1/auth/login - 400 [1 ms]
+2024-09-28 14:22:03 [error] : POST /api/v1/auth/login - 400 [1 ms]
+2024-09-28 14:43:03 [error] : Validation error:
+2024-09-28 14:43:03 [error] : POST /api/v1/auth/login - 400 [5 ms]
+2024-09-28 14:43:12 [error] : Validation error:
+2024-09-28 14:43:12 [error] : POST /api/v1/auth/login - 400 [4 ms]
+2024-09-28 14:43:17 [error] : Validation error:
+2024-09-28 14:43:17 [error] : POST /api/v1/auth/login - 400 [3 ms]
+2024-09-28 15:39:39 [error] : GET /api/v1/files - 401 [5 ms]
+2024-09-28 15:42:09 [error] : GET /api/v1/files - 401 [3 ms]
+2024-09-28 15:42:14 [error] : GET /api/v1/files - 401 [1 ms]
+2024-09-28 15:42:18 [error] : GET /api/v1/files - 401 [4 ms]

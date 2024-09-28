@@ -2,7 +2,7 @@ import { Router } from "express";
 import passport from "passport";
 import { login, register } from "../controllers";
 import { validateRequest } from "../middlewares";
-import { createUserSchema } from "../models/user.schema";
+import { createUserSchema, loginSchema } from "../models/user.schema";
 
 const router = Router();
 
@@ -58,6 +58,7 @@ router.post("/register", validateRequest(createUserSchema), register);
  */
 router.post(
   "/login",
+  validateRequest(loginSchema),
   passport.authenticate("local", { session: false }),
   login
 );

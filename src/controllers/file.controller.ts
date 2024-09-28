@@ -10,6 +10,7 @@ import {
   restoreFileVersion,
   downloadFileVersion,
 } from "../services";
+import { errorResponse, successResponse } from "../utils";
 
 // Upload a file
 export const uploadFiles = async (req: Request, res: Response) => {
@@ -20,17 +21,18 @@ export const uploadFiles = async (req: Request, res: Response) => {
     // @ts-ignore
     filename,
   } = req;
-  const originalName = req.file?.originalname || "";
+
+  const originalName = req.file?.originalname || filename;
 
   if (!req.file || !userId || !originalName) {
-    return res.status(400).json({ message: "Missing required fields" });
+    return errorResponse(res, "Missing required fields", 400);
   }
 
   try {
     const file = await uploadFile(userId, originalName, virtualPath, filename);
-    res.status(200).json({ message: "File uploaded successfully", file });
+    return successResponse(res, file, "File uploaded successfully");
   } catch (error) {
-    res.status(500).json({ message: "Error uploading file", error });
+    return errorResponse(res, "Error uploading file", 500, error);
   }
 };
 
@@ -43,9 +45,9 @@ export const getAllFiles = async (req: Request, res: Response) => {
 
   try {
     const files = await getAllFilesByUserId(userId);
-    res.status(200).json({ message: "Files fetched successfully", files });
+    return successResponse(res, files, "Files fetched successfully");
   } catch (error) {
-    res.status(500).json({ message: "Error fetching files", error });
+    return errorResponse(res, "Error fetching files", 500, error);
   }
 };
 
@@ -59,9 +61,9 @@ export const getFile = async (req: Request, res: Response) => {
 
   try {
     const file = await getFileById(fileId, userId);
-    res.status(200).json({ message: "File fetched successfully", file });
+    return successResponse(res, file, "File fetched successfully");
   } catch (error) {
-    res.status(500).json({ message: "Error fetching file", error });
+    return errorResponse(res, "Error fetching files", 500, error);
   }
 };
 
@@ -76,7 +78,7 @@ export const downloadLatest = async (req: Request, res: Response) => {
   try {
     await downloadLatestFile(fileId, userId, res);
   } catch (error) {
-    res.status(500).json({ message: "Error downloading file", error });
+    return errorResponse(res, "Error downloading file", 500, error);
   }
 };
 
@@ -91,7 +93,7 @@ export const downloadSpecificVersion = async (req: Request, res: Response) => {
   try {
     await downloadFileVersion(fileId, parseInt(version), userId, res);
   } catch (error) {
-    res.status(500).json({ message: "Error downloading file version", error });
+    return errorResponse(res, "Error downloading file version", 500, error);
   }
 };
 
@@ -105,11 +107,9 @@ export const getFileVersions = async (req: Request, res: Response) => {
 
   try {
     const file = await getFileWithVersions(fileId, userId);
-    res
-      .status(200)
-      .json({ message: "File versions fetched successfully", file });
+    return successResponse(res, file, "File versions fetched successfully");
   } catch (error) {
-    res.status(500).json({ message: "Error fetching file versions", error });
+    return errorResponse(res, "Error fetching file versions", 500, error);
   }
 };
 
@@ -127,11 +127,13 @@ export const restoreFile = async (req: Request, res: Response) => {
       parseInt(versionNumber),
       userId
     );
-    res
-      .status(200)
-      .json({ message: "File restored to the specified version", fileVersion });
+    return successResponse(
+      res,
+      fileVersion,
+      "File restored to the specified version"
+    );
   } catch (error) {
-    res.status(500).json({ message: "Error restoring file", error });
+    return errorResponse(res, "Error restoring file", 500, error);
   }
 };
 
@@ -145,9 +147,9 @@ export const deleteFileById = async (req: Request, res: Response) => {
 
   try {
     const result = await deleteFile(fileId, userId);
-    res.status(200).json({ message: "File deleted successfully", result });
+    return successResponse(res, result, "File deleted successfully");
   } catch (error) {
-    res.status(500).json({ message: "Error deleting file", error });
+    return errorResponse(res, "Error deleting file", 500, error);
   }
 };
 
@@ -170,12 +172,8 @@ export const grantPermissions = async (req: Request, res: Response) => {
       canDelete
     );
 
-    res
-      .status(200)
-      .json({ message: "Permissions granted successfully", result });
+    return successResponse(res, result, "Permissions granted successfully");
   } catch (error: any) {
-    res
-      .status(500)
-      .json({ message: "Error granting permissions", error: error.message });
+    return errorResponse(res, "Error granting permissions", 500, error);
   }
 };

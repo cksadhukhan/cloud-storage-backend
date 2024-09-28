@@ -17,6 +17,10 @@ export const register = async (req: Request, res: Response) => {
 };
 
 export const login = (req: Request, res: Response) => {
-  const token = loginUser(req.user as any);
-  return successResponse(res, { token }, "Login successful");
+  try {
+    const token = loginUser(req.user as any);
+    return successResponse(res, { token }, "Login successful");
+  } catch (error) {
+    return errorResponse(res, "Login failed", 500, error);
+  }
 };

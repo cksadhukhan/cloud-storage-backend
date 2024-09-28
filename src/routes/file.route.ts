@@ -1,9 +1,7 @@
 import { Request, Response } from "express";
 import { Router } from "express";
-import fs from "fs";
-import path from "path";
 import { upload } from "../utils";
-import { authenticate } from "../middlewares";
+import { authenticate, validateRequest } from "../middlewares";
 import {
   grantPermissions,
   uploadFiles,
@@ -17,6 +15,7 @@ import {
   getFileVersions,
   restoreFile,
 } from "../controllers/file.controller";
+import { fileUploadSchema, permissionSchema } from "../models/file.schema";
 
 const router = Router();
 
@@ -47,7 +46,13 @@ const router = Router();
  *       400:
  *         description: Bad request - Invalid file
  */
-router.post("/upload", authenticate, upload.single("file"), uploadFiles);
+router.post(
+  "/upload",
+  authenticate,
+  validateRequest(fileUploadSchema),
+  upload.single("file"),
+  uploadFiles
+);
 
 /**
  * @swagger
@@ -194,7 +199,7 @@ router.get("/:id/restore/:versionNumber", authenticate, restoreFile);
  *       401:
  *         description: Unauthorized - Invalid token
  */
-router.delete("/:id", authenticate, grantPermissions, deleteFileById);
+router.delete("/:id", authenticate, deleteFileById);
 
 /**
  * @swagger
@@ -264,6 +269,11 @@ router.get("/:id/download/:version", authenticate, downloadSpecificVersion);
  *       400:
  *         description: Bad request
  */
-router.post("/:id/permissions", authenticate, grantPermissions);
+router.post(
+  "/:id/permissions",
+  authenticate,
+  validateRequest(permissionSchema),
+  grantPermissions
+);
 
 export default router;
