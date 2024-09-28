@@ -104,6 +104,67 @@ router.get("/:id", authenticate, getFile);
 
 /**
  * @swagger
+ * /api/v1/files/{id}:
+ *   put:
+ *     summary: Update file information
+ *     tags:
+ *       - [Files]
+ *     security:
+ *       - bearerAuth: []
+ *     parameters:
+ *       - in: path
+ *         name: id
+ *         required: true
+ *         schema:
+ *           type: string
+ *         description: ID of the file to update
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             properties:
+ *               description:
+ *                 type: string
+ *                 description: Updated description of the file
+ *     responses:
+ *       200:
+ *         description: File updated successfully
+ *       404:
+ *         description: File not found
+ *       400:
+ *         description: Bad request
+ */
+router.put("/:id", authenticate, updateFile);
+
+/**
+ * @swagger
+ * /api/v1/files/{id}:
+ *   delete:
+ *     summary: Delete a file by its ID
+ *     tags:
+ *       - [Files]
+ *     security:
+ *       - bearerAuth: []
+ *     parameters:
+ *       - in: path
+ *         name: id
+ *         required: true
+ *         schema:
+ *           type: string
+ *     responses:
+ *       200:
+ *         description: File deleted successfully
+ *       404:
+ *         description: File not found
+ *       401:
+ *         description: Unauthorized - Invalid token
+ */
+router.delete("/:id", authenticate, deleteFileById);
+
+/**
+ * @swagger
  * /api/v1/files/{id}/download:
  *   get:
  *     summary: Download the latest version of a file
@@ -181,31 +242,6 @@ router.get("/:id/versions", authenticate, getFileVersions);
  *         description: Unauthorized - Invalid token
  */
 router.get("/:id/restore/:versionNumber", authenticate, restoreFile);
-
-/**
- * @swagger
- * /api/v1/files/{id}:
- *   delete:
- *     summary: Delete a file by its ID
- *     tags:
- *       - [Files]
- *     security:
- *       - bearerAuth: []
- *     parameters:
- *       - in: path
- *         name: id
- *         required: true
- *         schema:
- *           type: string
- *     responses:
- *       200:
- *         description: File deleted successfully
- *       404:
- *         description: File not found
- *       401:
- *         description: Unauthorized - Invalid token
- */
-router.delete("/:id", authenticate, deleteFileById);
 
 /**
  * @swagger
@@ -358,42 +394,6 @@ router.get("/duplicates", authenticate, getDuplicateFiles);
  *         description: File not found or user does not have access.
  */
 router.get("/:id/duplicates", authenticate, getDuplicatesByFileId);
-
-/**
- * @swagger
- * /api/v1/files/{id}:
- *   put:
- *     summary: Update file information
- *     tags:
- *       - [Files]
- *     security:
- *       - bearerAuth: []
- *     parameters:
- *       - in: path
- *         name: id
- *         required: true
- *         schema:
- *           type: string
- *         description: ID of the file to update
- *     requestBody:
- *       required: true
- *       content:
- *         application/json:
- *           schema:
- *             type: object
- *             properties:
- *               description:
- *                 type: string
- *                 description: Updated description of the file
- *     responses:
- *       200:
- *         description: File updated successfully
- *       404:
- *         description: File not found
- *       400:
- *         description: Bad request
- */
-router.put("/:id", authenticate, updateFile);
 
 /**
  * @swagger

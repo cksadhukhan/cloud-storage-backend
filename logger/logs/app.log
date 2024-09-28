@@ -434,3 +434,80 @@ Please make sure your database server is running at `localhost:5432`.
 2024-09-28 17:30:49 [info] : GET /api-docs/swagger-ui-init.js - 200 [0 ms]
 2024-09-28 17:30:49 [info] : GET /api-docs/favicon-32x32.png - 304 [0 ms]
 2024-09-28 17:30:49 [info] : GET /api-docs/favicon-32x32.png - 304 [2 ms]
+2024-09-28 17:55:45 [info] : Initializing Swagger...
+2024-09-28 17:55:46 [info] : Server running on port 8000
+2024-09-28 17:55:46 [info] : Database Connected!
+2024-09-28 17:56:04 [info] : GET /api-docs/ - 304 [6 ms]
+2024-09-28 17:56:04 [info] : GET /api-docs/swagger-ui.css - 304 [3 ms]
+2024-09-28 17:56:04 [info] : GET /api-docs/swagger-ui-bundle.js - 304 [4 ms]
+2024-09-28 17:56:04 [info] : GET /api-docs/swagger-ui-init.js - 200 [1 ms]
+2024-09-28 17:56:04 [info] : GET /api-docs/swagger-ui-standalone-preset.js - 304 [1 ms]
+2024-09-28 17:56:04 [info] : GET /api-docs/favicon-32x32.png - 304 [1 ms]
+2024-09-28 17:56:04 [info] : GET /api-docs/favicon-32x32.png - 304 [2 ms]
+2024-09-28 17:58:39 [info] : Initializing Swagger...
+2024-09-28 17:58:39 [info] : Server running on port 8000
+2024-09-28 17:58:39 [info] : Database Connected!
+2024-09-28 18:03:17 [info] : Initializing Swagger...
+2024-09-28 18:03:17 [info] : Server running on port 8000
+2024-09-28 18:03:17 [info] : Database Connected!
+2024-09-28 18:05:08 [info] : Initializing Swagger...
+2024-09-28 18:05:08 [info] : Server running on port 8000
+2024-09-28 18:05:08 [info] : Database Connected!
+2024-09-28 18:05:14 [info] : Login successful
+2024-09-28 18:05:15 [info] : POST /api/v1/auth/login - 200 [134 ms]
+2024-09-28 18:05:42 [info] : Initializing Swagger...
+2024-09-28 18:05:42 [info] : Server running on port 8000
+2024-09-28 18:05:42 [info] : Database Connected!
+2024-09-28 18:08:49 [info] : Initializing Swagger...
+2024-09-28 18:08:49 [info] : Server running on port 8000
+2024-09-28 18:08:49 [info] : Database Connected!
+2024-09-28 18:08:52 [info] : POST /api/v1/auth/login - 200 [116 ms]
+2024-09-28 18:13:16 [info] : Initializing Swagger...
+2024-09-28 18:13:16 [info] : Server running on port 8000
+2024-09-28 18:13:17 [info] : Database Connected!
+2024-09-28 18:13:20 [info] : Initializing Swagger...
+2024-09-28 18:13:20 [info] : Server running on port 8000
+2024-09-28 18:13:20 [info] : Database Connected!
+2024-09-28 18:15:48 [info] : Initializing Swagger...
+2024-09-28 18:15:48 [info] : Server running on port 8000
+2024-09-28 18:15:48 [info] : Database Connected!
+2024-09-28 18:15:55 [info] : Login successful
+2024-09-28 18:15:55 [info] : POST /api/v1/auth/login - 200 [116 ms]
+2024-09-28 18:16:45 [info] : Initializing Swagger...
+2024-09-28 18:16:46 [info] : Server running on port 8000
+2024-09-28 18:16:46 [info] : Database Connected!
+2024-09-28 18:16:47 [info] : Login successful
+2024-09-28 18:16:47 [info] : POST /api/v1/auth/login - 200 [114 ms]
+2024-09-28 18:17:39 [info] : Initializing Swagger...
+2024-09-28 18:17:39 [info] : Server running on port 8000
+2024-09-28 18:17:39 [info] : Database Connected!
+2024-09-28 18:18:32 [info] : Initializing Swagger...
+2024-09-28 18:18:32 [info] : Server running on port 8000
+2024-09-28 18:18:32 [info] : Database Connected!
+2024-09-28 18:21:04 [info] : Initializing Swagger...
+2024-09-28 18:21:04 [info] : Server running on port 8000
+2024-09-28 18:21:04 [info] : Database Connected!
+2024-09-28 18:26:52 [info] : Initializing Swagger...
+2024-09-28 18:26:52 [info] : Server running on port 8000
+2024-09-28 18:26:52 [info] : Database Connected!
+2024-09-28 18:30:09 [info] : Initializing Swagger...
+2024-09-28 18:30:10 [info] : Server running on port 8000
+2024-09-28 18:30:10 [info] : Database Connected!
+2024-09-28 18:30:17 [info] : Initializing Swagger...
+2024-09-28 18:30:17 [info] : Server running on port 8000
+2024-09-28 18:30:17 [info] : Database Connected!
+2024-09-28 18:37:03 [info] : Initializing Swagger...
+2024-09-28 18:37:03 [info] : Server running on port 8000
+2024-09-28 18:37:03 [info] : Database Connected!
+2024-09-28 18:40:53 [info] : Initializing Swagger...
+2024-09-28 18:40:53 [info] : Server running on port 8000
+2024-09-28 18:40:53 [info] : Database Connected!
+2024-09-28 18:41:33 [info] : Initializing Swagger...
+2024-09-28 18:41:33 [info] : Server running on port 8000
+2024-09-28 18:41:33 [info] : Database Connected!
+2024-09-28 18:42:23 [info] : Initializing Swagger...
+2024-09-28 18:42:23 [info] : Server running on port 8000
+2024-09-28 18:42:23 [info] : Database Connected!
+2024-09-28 18:43:22 [info] : Initializing Swagger...
+2024-09-28 18:43:22 [info] : Server running on port 8000
+2024-09-28 18:43:22 [info] : Database Connected!

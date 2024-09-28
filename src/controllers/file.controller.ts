@@ -17,6 +17,7 @@ import {
   deleteFileMetadata,
   updateFileDescription,
   searchFiles as searchFilesService,
+  logger,
 } from "../services";
 import { errorResponse, successResponse } from "../utils";
 
@@ -39,6 +40,7 @@ export const uploadFiles = async (req: Request, res: Response) => {
   const originalName = req.file?.originalname || filename;
 
   if (!req.file || !userId || !originalName) {
+    logger.error("Missing required fields");
     return errorResponse(res, "Missing required fields", 400);
   }
 
@@ -52,8 +54,10 @@ export const uploadFiles = async (req: Request, res: Response) => {
       size,
       type
     );
+    logger.info("File uploaded successfully");
     return successResponse(res, file, "File uploaded successfully");
   } catch (error) {
+    logger.error("Error uploading file");
     return errorResponse(res, "Error uploading file", 500, error);
   }
 };
@@ -67,8 +71,10 @@ export const getAllFiles = async (req: Request, res: Response) => {
 
   try {
     const files = await getAllFilesByUserId(userId);
+    logger.info("Files fetched successfully");
     return successResponse(res, files, "Files fetched successfully");
   } catch (error) {
+    logger.error("Error fetching files", error);
     return errorResponse(res, "Error fetching files", 500, error);
   }
 };
@@ -83,8 +89,10 @@ export const getFile = async (req: Request, res: Response) => {
 
   try {
     const file = await getFileById(fileId, userId);
+    logger.info("File fetched successfully");
     return successResponse(res, file, "File fetched successfully");
   } catch (error) {
+    logger.error("Error fetching file", error);
     return errorResponse(res, "Error fetching files", 500, error);
   }
 };
@@ -100,6 +108,7 @@ export const downloadLatest = async (req: Request, res: Response) => {
   try {
     await downloadLatestFile(fileId, userId, res);
   } catch (error) {
+    logger.error("Error downloading file", error);
     return errorResponse(res, "Error downloading file", 500, error);
   }
 };
@@ -115,6 +124,7 @@ export const downloadSpecificVersion = async (req: Request, res: Response) => {
   try {
     await downloadFileVersion(fileId, parseInt(version), userId, res);
   } catch (error) {
+    logger.error("Error downloading file version", error);
     return errorResponse(res, "Error downloading file version", 500, error);
   }
 };
@@ -129,8 +139,10 @@ export const getFileVersions = async (req: Request, res: Response) => {
 
   try {
     const file = await getFileWithVersions(fileId, userId);
+    logger.info("File versions fetched successfully");
     return successResponse(res, file, "File versions fetched successfully");
   } catch (error) {
+    logger.error("Error fetching file versions", error);
     return errorResponse(res, "Error fetching file versions", 500, error);
   }
 };
@@ -149,12 +161,14 @@ export const restoreFile = async (req: Request, res: Response) => {
       parseInt(versionNumber),
       userId
     );
+    logger.info("File restored to the specified version");
     return successResponse(
       res,
       fileVersion,
       "File restored to the specified version"
     );
   } catch (error) {
+    logger.error("Error restoring file", error);
     return errorResponse(res, "Error restoring file", 500, error);
   }
 };
@@ -169,8 +183,10 @@ export const deleteFileById = async (req: Request, res: Response) => {
 
   try {
     const result = await deleteFile(fileId, userId);
+    logger.info("File deleted successfully");
     return successResponse(res, result, "File deleted successfully");
   } catch (error) {
+    logger.error("Error deleting file", error);
     return errorResponse(res, "Error deleting file", 500, error);
   }
 };
@@ -194,8 +210,10 @@ export const grantPermissions = async (req: Request, res: Response) => {
       canDelete
     );
 
+    logger.info("Permissions granted successfully");
     return successResponse(res, result, "Permissions granted successfully");
   } catch (error: any) {
+    logger.error("Error granting permissions", error);
     return errorResponse(res, "Error granting permissions", 500, error);
   }
 };
@@ -212,12 +230,14 @@ export const getDuplicateFiles = async (req: Request, res: Response) => {
 
     const result = await findDuplicateFilesForUser(userId);
 
+    logger.info("Duplicate files retrieved successfully");
     return successResponse(
       res,
       result,
       "Duplicate files retrieved successfully"
     );
   } catch (error) {
+    logger.error("Error fetching duplicate files", error);
     return errorResponse(res, "Error fetching duplicate files", 500, error);
   }
 };
@@ -234,12 +254,15 @@ export const getDuplicatesByFileId = async (req: Request, res: Response) => {
     } = req;
 
     const result = await findDuplicatesByFileIdForUser(id, userId);
+
+    logger.info("Duplicates by file ID retrieved successfully");
     return successResponse(
       res,
       result,
       "Duplicates by file ID retrieved successfully"
     );
   } catch (error) {
+    logger.error("Error fetching duplicates by file ID", error);
     return errorResponse(
       res,
       "Error fetching duplicates by file ID",
@@ -256,8 +279,11 @@ export const updateFile = async (req: Request, res: Response) => {
 
   try {
     const updatedFile = await updateFileDescription(id, description);
+
+    logger.info("File description updated");
     return successResponse(res, updatedFile, "File description updated");
   } catch (error) {
+    logger.error("Error updating file description", error);
     return errorResponse(res, "Error updating file description", 500, error);
   }
 };
@@ -268,8 +294,11 @@ export const getMetadata = async (req: Request, res: Response) => {
 
   try {
     const metadata = await getFileMetadata(id);
+
+    logger.info("Metadata retrieved successfully");
     return successResponse(res, metadata, "Metadata retrieved successfully");
   } catch (error) {
+    logger.error("Error fetching metadata", error);
     return errorResponse(res, "Error fetching metadata", 500, error);
   }
 };
@@ -281,8 +310,11 @@ export const addMetadata = async (req: Request, res: Response) => {
 
   try {
     const metadata = await addFileMetadata(id, key, value);
+
+    logger.info("Metadata added successfully");
     return successResponse(res, metadata, "Metadata added successfully");
   } catch (error) {
+    logger.error("Error adding metadata", error);
     return errorResponse(res, "Error adding metadata", 500, error);
   }
 };
@@ -294,12 +326,15 @@ export const updateMetadata = async (req: Request, res: Response) => {
 
   try {
     const updatedMetadata = await updateFileMetadata(id, key, value);
+
+    logger.info("Metadata updated successfully");
     return successResponse(
       res,
       updatedMetadata,
       "Metadata updated successfully"
     );
   } catch (error) {
+    logger.error("Error updating metadata", error);
     return errorResponse(res, "Error updating metadata", 500, error);
   }
 };
@@ -311,8 +346,11 @@ export const deleteMetadata = async (req: Request, res: Response) => {
 
   try {
     await deleteFileMetadata(id, key);
+
+    logger.info("Metadata deleted successfully");
     return successResponse(res, null, "Metadata deleted successfully");
   } catch (error) {
+    logger.error("Error deleting metadata", error);
     return errorResponse(res, "Error deleting metadata", 500, error);
   }
 };
@@ -330,10 +368,15 @@ export const searchFiles = async (req: Request, res: Response) => {
       endDate: query as string,
     });
 
-    return res.status(200).json(files);
+    logger.info("Search performed successfully");
+    return successResponse(res, files, "Search performed successfully");
   } catch (error) {
-    return res
-      .status(500)
-      .json({ error: "An error occurred while searching for files." });
+    logger.error("An error occurred while searching for files.", error);
+    return errorResponse(
+      res,
+      "An error occurred while searching for files.",
+      500,
+      error
+    );
   }
 };
