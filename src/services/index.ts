@@ -10,6 +10,12 @@ import {
   restoreFileVersion,
   findDuplicateFilesForUser,
   findDuplicatesByFileIdForUser,
+  updateFileDescription,
+  getFileMetadata,
+  updateFileMetadata,
+  deleteFileMetadata,
+  addFileMetadata,
+  searchFiles,
 } from "./file.service";
 import { grantPermission } from "./permission.service";
 import { logger, requestLogger } from "./logger.service";
@@ -30,4 +36,10 @@ export {
   requestLogger,
   findDuplicateFilesForUser,
   findDuplicatesByFileIdForUser,
+  updateFileDescription,
+  updateFileMetadata,
+  getFileMetadata,
+  addFileMetadata,
+  deleteFileMetadata,
+  searchFiles,
 };

@@ -11,12 +11,24 @@ import {
   downloadFileVersion,
   findDuplicateFilesForUser,
   findDuplicatesByFileIdForUser,
+  getFileMetadata,
+  addFileMetadata,
+  updateFileMetadata,
+  deleteFileMetadata,
+  updateFileDescription,
+  searchFiles as searchFilesService,
 } from "../services";
 import { errorResponse, successResponse } from "../utils";
 
 // Upload a file
 export const uploadFiles = async (req: Request, res: Response) => {
-  const { virtualPath = "/" } = req.body;
+  const {
+    virtualPath = "/",
+    description = null,
+    size = null,
+    type = null,
+  } = req.body;
+
   const {
     // @ts-ignore
     user: { id: userId },
@@ -31,7 +43,15 @@ export const uploadFiles = async (req: Request, res: Response) => {
   }
 
   try {
-    const file = await uploadFile(userId, originalName, virtualPath, filename);
+    const file = await uploadFile(
+      userId,
+      originalName,
+      virtualPath,
+      filename,
+      description,
+      size,
+      type
+    );
     return successResponse(res, file, "File uploaded successfully");
   } catch (error) {
     return errorResponse(res, "Error uploading file", 500, error);
@@ -226,5 +246,94 @@ export const getDuplicatesByFileId = async (req: Request, res: Response) => {
       500,
       error
     );
+  }
+};
+
+// Update file description
+export const updateFile = async (req: Request, res: Response) => {
+  const { description } = req.body;
+  const { id } = req.params;
+
+  try {
+    const updatedFile = await updateFileDescription(id, description);
+    return successResponse(res, updatedFile, "File description updated");
+  } catch (error) {
+    return errorResponse(res, "Error updating file description", 500, error);
+  }
+};
+
+// Get metadata
+export const getMetadata = async (req: Request, res: Response) => {
+  const { id } = req.params;
+
+  try {
+    const metadata = await getFileMetadata(id);
+    return successResponse(res, metadata, "Metadata retrieved successfully");
+  } catch (error) {
+    return errorResponse(res, "Error fetching metadata", 500, error);
+  }
+};
+
+// Post metadata
+export const addMetadata = async (req: Request, res: Response) => {
+  const { key, value } = req.body;
+  const { id } = req.params;
+
+  try {
+    const metadata = await addFileMetadata(id, key, value);
+    return successResponse(res, metadata, "Metadata added successfully");
+  } catch (error) {
+    return errorResponse(res, "Error adding metadata", 500, error);
+  }
+};
+
+// Update metadata
+export const updateMetadata = async (req: Request, res: Response) => {
+  const { key, value } = req.body;
+  const { id } = req.params;
+
+  try {
+    const updatedMetadata = await updateFileMetadata(id, key, value);
+    return successResponse(
+      res,
+      updatedMetadata,
+      "Metadata updated successfully"
+    );
+  } catch (error) {
+    return errorResponse(res, "Error updating metadata", 500, error);
+  }
+};
+
+// Delete metadata
+export const deleteMetadata = async (req: Request, res: Response) => {
+  const { key } = req.body;
+  const { id } = req.params;
+
+  try {
+    await deleteFileMetadata(id, key);
+    return successResponse(res, null, "Metadata deleted successfully");
+  } catch (error) {
+    return errorResponse(res, "Error deleting metadata", 500, error);
+  }
+};
+
+export const searchFiles = async (req: Request, res: Response) => {
+  const { query, type, minSize, maxSize, startDate, endDate } = req.query;
+
+  try {
+    const files = await searchFilesService({
+      query: query as string,
+      type: query as string,
+      minSize: query as string,
+      maxSize: query as string,
+      startDate: query as string,
+      endDate: query as string,
+    });
+
+    return res.status(200).json(files);
+  } catch (error) {
+    return res
+      .status(500)
+      .json({ error: "An error occurred while searching for files." });
   }
 };

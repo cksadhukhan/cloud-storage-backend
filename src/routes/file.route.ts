@@ -7,8 +7,6 @@ import {
   uploadFiles,
   getFile,
   downloadLatest,
-} from "../controllers";
-import {
   deleteFileById,
   downloadSpecificVersion,
   getAllFiles,
@@ -16,7 +14,13 @@ import {
   getDuplicatesByFileId,
   getFileVersions,
   restoreFile,
-} from "../controllers/file.controller";
+  updateFile,
+  getMetadata,
+  addMetadata,
+  updateMetadata,
+  deleteMetadata,
+  searchFiles,
+} from "../controllers";
 import { fileUploadSchema, permissionSchema } from "../models/file.schema";
 
 const router = Router();
@@ -354,5 +358,252 @@ router.get("/duplicates", authenticate, getDuplicateFiles);
  *         description: File not found or user does not have access.
  */
 router.get("/:id/duplicates", authenticate, getDuplicatesByFileId);
+
+/**
+ * @swagger
+ * /api/v1/files/{id}:
+ *   put:
+ *     summary: Update file information
+ *     tags:
+ *       - [Files]
+ *     security:
+ *       - bearerAuth: []
+ *     parameters:
+ *       - in: path
+ *         name: id
+ *         required: true
+ *         schema:
+ *           type: string
+ *         description: ID of the file to update
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             properties:
+ *               description:
+ *                 type: string
+ *                 description: Updated description of the file
+ *     responses:
+ *       200:
+ *         description: File updated successfully
+ *       404:
+ *         description: File not found
+ *       400:
+ *         description: Bad request
+ */
+router.put("/:id", authenticate, updateFile);
+
+/**
+ * @swagger
+ * /api/v1/files/{id}/metadata:
+ *   get:
+ *     summary: Get metadata for a file
+ *     tags:
+ *       - [Files]
+ *     security:
+ *       - bearerAuth: []
+ *     parameters:
+ *       - in: path
+ *         name: id
+ *         required: true
+ *         schema:
+ *           type: string
+ *         description: ID of the file to retrieve metadata for
+ *     responses:
+ *       200:
+ *         description: Metadata retrieved successfully
+ *       404:
+ *         description: File not found
+ */
+router.get("/:id/metadata", authenticate, getMetadata);
+
+/**
+ * @swagger
+ * /api/v1/files/{id}/metadata:
+ *   post:
+ *     summary: Add metadata to a file
+ *     tags:
+ *       - [Files]
+ *     security:
+ *       - bearerAuth: []
+ *     parameters:
+ *       - in: path
+ *         name: id
+ *         required: true
+ *         schema:
+ *           type: string
+ *         description: ID of the file to add metadata for
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             properties:
+ *               key:
+ *                 type: string
+ *                 description: Metadata key
+ *               value:
+ *                 type: string
+ *                 description: Metadata value
+ *     responses:
+ *       200:
+ *         description: Metadata added successfully
+ *       404:
+ *         description: File not found
+ */
+router.post("/:id/metadata", authenticate, addMetadata);
+
+/**
+ * @swagger
+ * /api/v1/files/{id}/metadata:
+ *   put:
+ *     summary: Update metadata for a file
+ *     tags:
+ *       - [Files]
+ *     security:
+ *       - bearerAuth: []
+ *     parameters:
+ *       - in: path
+ *         name: id
+ *         required: true
+ *         schema:
+ *           type: string
+ *         description: ID of the file to update metadata for
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             properties:
+ *               key:
+ *                 type: string
+ *                 description: Metadata key
+ *               value:
+ *                 type: string
+ *                 description: Metadata value
+ *     responses:
+ *       200:
+ *         description: Metadata updated successfully
+ *       404:
+ *         description: File or metadata not found
+ */
+router.put("/:id/metadata", authenticate, updateMetadata);
+
+/**
+ * @swagger
+ * /api/v1/files/{id}/metadata:
+ *   delete:
+ *     summary: Delete metadata for a file
+ *     tags:
+ *       - [Files]
+ *     security:
+ *       - bearerAuth: []
+ *     parameters:
+ *       - in: path
+ *         name: id
+ *         required: true
+ *         schema:
+ *           type: string
+ *         description: ID of the file to delete metadata for
+ *       - in: query
+ *         name: key
+ *         required: true
+ *         schema:
+ *           type: string
+ *         description: Metadata key to delete
+ *     responses:
+ *       200:
+ *         description: Metadata deleted successfully
+ *       404:
+ *         description: File or metadata not found
+ */
+router.delete("/:id/metadata", authenticate, deleteMetadata);
+
+/**
+ * @swagger
+ * /api/v1/files/search:
+ *   get:
+ *     summary: Search for files based on query parameters
+ *     tags:
+ *       - [Files]
+ *     security:
+ *       - bearerAuth: []
+ *     parameters:
+ *       - in: query
+ *         name: query
+ *         required: false
+ *         schema:
+ *           type: string
+ *           description: Search query for file names or descriptions
+ *       - in: query
+ *         name: type
+ *         required: false
+ *         schema:
+ *           type: string
+ *           description: Filter files by type (e.g., image, document, etc.)
+ *       - in: query
+ *         name: minSize
+ *         required: false
+ *         schema:
+ *           type: integer
+ *           description: Minimum file size in bytes
+ *       - in: query
+ *         name: maxSize
+ *         required: false
+ *         schema:
+ *           type: integer
+ *           description: Maximum file size in bytes
+ *       - in: query
+ *         name: startDate
+ *         required: false
+ *         schema:
+ *           type: string
+ *           format: date-time
+ *           description: Filter files created after this date
+ *       - in: query
+ *         name: endDate
+ *         required: false
+ *         schema:
+ *           type: string
+ *           format: date-time
+ *           description: Filter files created before this date
+ *     responses:
+ *       200:
+ *         description: Files found successfully
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: array
+ *               items:
+ *                 type: object
+ *                 properties:
+ *                   id:
+ *                     type: string
+ *                   originalName:
+ *                     type: string
+ *                   size:
+ *                     type: integer
+ *                   type:
+ *                     type: string
+ *                   createdAt:
+ *                     type: string
+ *                     format: date-time
+ *                   description:
+ *                     type: string
+ *       400:
+ *         description: Invalid query parameters
+ *       401:
+ *         description: Unauthorized - Invalid token
+ */
+router.get(
+  "/search",
+  authenticate,
+  // validateRequest(fileSearchSchema),
+  searchFiles // Controller to handle file search
+);
 
 export default router;

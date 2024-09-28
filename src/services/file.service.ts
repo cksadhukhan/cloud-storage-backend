@@ -4,6 +4,7 @@ import { join } from "path";
 import { prisma } from "../prisma";
 import { calculateFileHash } from "../utils";
 import { checkPermission } from "./permission.service";
+import { SearchFilesParams } from "../types";
 
 const UPLOAD_DIR = join(process.cwd(), "uploads");
 
@@ -11,7 +12,10 @@ export const uploadFile = async (
   userId: string,
   originalName: string,
   virtualPath: string,
-  filename: string
+  filename: string,
+  description: string | null,
+  type: string | null,
+  size: number | null
 ) => {
   const existingFile = await prisma.file.findFirst({
     where: {
@@ -42,6 +46,9 @@ export const uploadFile = async (
       data: {
         currenthash: hash,
         currentVersion: newVersionNumber,
+        description,
+        size,
+        type,
       },
     });
 
@@ -54,13 +61,16 @@ export const uploadFile = async (
         virtualPath,
         userId,
         filename,
+        description,
+        size,
+        type,
         currenthash: hash,
         currentVersion: 0,
         versions: {
           create: {
             id: uuidv4(),
             version: 0,
-            filename: filename,
+            filename,
             hash,
           },
         },
@@ -314,4 +324,92 @@ export const findDuplicatesByFileIdForUser = async (
   });
 
   return duplicates;
+};
+
+// Service for updating file description
+export const updateFileDescription = async (
+  fileId: string,
+  description: string
+) => {
+  return await prisma.file.update({
+    where: { id: fileId },
+    data: { description },
+  });
+};
+
+// Service for retrieving metadata
+export const getFileMetadata = async (fileId: string) => {
+  return await prisma.metadata.findMany({
+    where: { fileId },
+  });
+};
+
+// Service for adding metadata
+export const addFileMetadata = async (
+  fileId: string,
+  key: string,
+  value: string
+) => {
+  return await prisma.metadata.create({
+    data: {
+      id: uuidv4(),
+      fileId,
+      key,
+      value,
+    },
+  });
+};
+
+// Service for updating metadata
+export const updateFileMetadata = async (
+  fileId: string,
+  key: string,
+  value: string
+) => {
+  return await prisma.metadata.update({
+    where: { fileId_key: { fileId, key } },
+    data: { value },
+  });
+};
+
+// Service for deleting metadata
+export const deleteFileMetadata = async (fileId: string, key: string) => {
+  await prisma.metadata.delete({
+    where: { fileId_key: { fileId, key } },
+  });
+};
+
+export const searchFiles = async ({
+  query,
+  type,
+  minSize,
+  maxSize,
+  startDate,
+  endDate,
+}: SearchFilesParams) => {
+  try {
+    const files = await prisma.file.findMany({
+      where: {
+        AND: [
+          query
+            ? {
+                OR: [
+                  { originalName: { contains: query, mode: "insensitive" } },
+                  { description: { contains: query, mode: "insensitive" } },
+                ],
+              }
+            : {},
+          type ? { type: type } : {},
+          minSize ? { size: { gte: parseInt(minSize) } } : {},
+          maxSize ? { size: { lte: parseInt(maxSize) } } : {},
+          startDate ? { createdAt: { gte: new Date(startDate) } } : {},
+          endDate ? { createdAt: { lte: new Date(endDate) } } : {},
+        ],
+      },
+    });
+
+    return files;
+  } catch (error) {
+    throw new Error("Error searching for files");
+  }
 };

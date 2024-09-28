@@ -7,6 +7,17 @@ import {
   downloadLatest,
   getFileVersions,
   downloadSpecificVersion,
+  updateFile,
+  updateMetadata,
+  getMetadata,
+  addMetadata,
+  deleteMetadata,
+  deleteFileById,
+  getAllFiles,
+  getDuplicateFiles,
+  getDuplicatesByFileId,
+  restoreFile,
+  searchFiles,
 } from "./file.controller";
 import { prometheusMetrics } from "./prometheus.controller";
 
@@ -21,4 +32,15 @@ export {
   getFileVersions,
   downloadSpecificVersion,
   prometheusMetrics,
+  updateFile,
+  updateMetadata,
+  addMetadata,
+  getMetadata,
+  deleteMetadata,
+  deleteFileById,
+  getAllFiles,
+  getDuplicateFiles,
+  getDuplicatesByFileId,
+  restoreFile,
+  searchFiles,
 };
