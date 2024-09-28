@@ -250,3 +250,68 @@ export const downloadFileVersion = async (
   // Send the file as a stream to avoid large memory usage
   fileStream.pipe(res);
 };
+
+/**
+ * Get groups of duplicate files for the authenticated user based on their hash.
+ */
+export const findDuplicateFilesForUser = async (userId: string) => {
+  const duplicates = await prisma.file.groupBy({
+    by: ["currenthash"],
+    having: {
+      currenthash: {
+        _count: {
+          gt: 1, // Only include files that have a hash count > 1 (duplicates)
+        },
+      },
+    },
+    where: {
+      userId, // Filter by the authenticated user's ID
+    },
+    orderBy: {
+      currenthash: "asc",
+    },
+  });
+
+  const result = await Promise.all(
+    duplicates.map(async (group) => {
+      return await prisma.file.findMany({
+        where: {
+          currenthash: group.currenthash,
+          userId, // Ensure only the user's files are fetched
+        },
+      });
+    })
+  );
+
+  return result;
+};
+
+/**
+ * Find duplicates of a specific file by its ID for the authenticated user.
+ * @param id The file ID to search duplicates for
+ * @param userId The authenticated user's ID
+ */
+export const findDuplicatesByFileIdForUser = async (
+  id: string,
+  userId: string
+) => {
+  const file = await prisma.file.findUnique({
+    where: { id, userId }, // Ensure the file belongs to the authenticated user
+  });
+
+  if (!file) {
+    throw new Error("File not found or you do not have access to this file");
+  }
+
+  const duplicates = await prisma.file.findMany({
+    where: {
+      currenthash: file.currenthash,
+      userId,
+      NOT: {
+        id: file.id, // Exclude the file itself
+      },
+    },
+  });
+
+  return duplicates;
+};

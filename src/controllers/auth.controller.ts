@@ -1,5 +1,4 @@
 import { Request, Response } from "express";
-import passport from "passport";
 import { loginUser, registerUser } from "../services";
 import { errorResponse, successResponse } from "../utils";
 import { CreateUserInput } from "../models/user.schema";

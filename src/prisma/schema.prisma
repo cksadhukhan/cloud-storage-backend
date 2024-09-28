@@ -30,11 +30,15 @@ model File {
   virtualPath    String
   filename       String
   userId         String
+  description    String? // Optional description field
+  size           Int? // Optional size field
+  type           String? // Optional type field
   createdAt      DateTime         @default(now())
   currenthash    String           @default("")
   currentVersion Int              @default(0)
   versions       FileVersion[]
   permissions    FilePermission[]
+  metadata       Metadata[]
 
   User User @relation("FileOwner", fields: [userId], references: [id])
 }
@@ -64,4 +68,16 @@ model FilePermission {
   User User @relation(fields: [userId], references: [id])
 
   @@unique([fileId, userId])
+}
+
+model Metadata {
+  id        String   @id @default(uuid())
+  fileId    String
+  key       String
+  value     String
+  createdAt DateTime @default(now())
+
+  File File @relation(fields: [fileId], references: [id])
+
+  @@unique([fileId, key]) // Ensures each file has unique metadata keys
 }

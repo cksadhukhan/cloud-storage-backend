@@ -12,6 +12,8 @@ import {
   deleteFileById,
   downloadSpecificVersion,
   getAllFiles,
+  getDuplicateFiles,
+  getDuplicatesByFileId,
   getFileVersions,
   restoreFile,
 } from "../controllers/file.controller";
@@ -25,7 +27,7 @@ const router = Router();
  *   post:
  *     summary: Upload a file
  *     tags:
- *       - File
+ *       - [Files]
  *     security:
  *       - bearerAuth: []  # Assuming you're using bearer token authentication
  *     requestBody:
@@ -60,7 +62,7 @@ router.post(
  *   get:
  *     summary: Get all files by the authenticated user
  *     tags:
- *       - File
+ *       - [Files]
  *     security:
  *       - bearerAuth: []
  *     responses:
@@ -77,7 +79,7 @@ router.get("/", authenticate, getAllFiles);
  *   get:
  *     summary: Get a specific file by its ID
  *     tags:
- *       - File
+ *       - [Files]
  *     security:
  *       - bearerAuth: []
  *     parameters:
@@ -102,7 +104,7 @@ router.get("/:id", authenticate, getFile);
  *   get:
  *     summary: Download the latest version of a file
  *     tags:
- *       - File
+ *       - [Files]
  *     security:
  *       - bearerAuth: []
  *     parameters:
@@ -127,7 +129,7 @@ router.get("/:id/download", authenticate, downloadLatest);
  *   get:
  *     summary: Get all versions of a specific file
  *     tags:
- *       - File
+ *       - [Files]
  *     security:
  *       - bearerAuth: []
  *     parameters:
@@ -152,7 +154,7 @@ router.get("/:id/versions", authenticate, getFileVersions);
  *   get:
  *     summary: Restore a specific version of a file
  *     tags:
- *       - File
+ *       - [Files]
  *     security:
  *       - bearerAuth: []
  *     parameters:
@@ -182,7 +184,7 @@ router.get("/:id/restore/:versionNumber", authenticate, restoreFile);
  *   delete:
  *     summary: Delete a file by its ID
  *     tags:
- *       - File
+ *       - [Files]
  *     security:
  *       - bearerAuth: []
  *     parameters:
@@ -207,7 +209,7 @@ router.delete("/:id", authenticate, deleteFileById);
  *   get:
  *     summary: Download a specific version of a file
  *     tags:
- *       - File
+ *       - [Files]
  *     security:
  *       - bearerAuth: []
  *     parameters:
@@ -237,7 +239,7 @@ router.get("/:id/download/:version", authenticate, downloadSpecificVersion);
  *   post:
  *     summary: Grant permissions to a user for a file
  *     tags:
- *       - File
+ *       - [Files]
  *     security:
  *       - bearerAuth: []
  *     parameters:
@@ -275,5 +277,82 @@ router.post(
   validateRequest(permissionSchema),
   grantPermissions
 );
+
+/**
+ * @swagger
+ * /api/v1/files/duplicates:
+ *   get:
+ *     summary: Get duplicate files based on hash
+ *     tags:
+ *       - [Files]
+ *     security:
+ *       - bearerAuth: []
+ *     responses:
+ *       200:
+ *         description: Returns an array of arrays of duplicate files.
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: array
+ *               items:
+ *                 type: array
+ *                 items:
+ *                   type: object
+ *                   properties:
+ *                     id:
+ *                       type: string
+ *                       description: Unique identifier for the file.
+ *                     originalName:
+ *                       type: string
+ *                       description: Original name of the file.
+ *                     hash:
+ *                       type: string
+ *                       description: File hash for identifying duplicates.
+ *       401:
+ *         description: Unauthorized, invalid or expired token.
+ */
+router.get("/duplicates", authenticate, getDuplicateFiles);
+
+/**
+ * @swagger
+ * /api/v1/files/{id}/duplicates:
+ *   get:
+ *     summary: Get duplicates of a specific file by file ID
+ *     tags:
+ *       - [Files]
+ *     security:
+ *       - bearerAuth: []
+ *     parameters:
+ *       - in: path
+ *         name: id
+ *         schema:
+ *           type: string
+ *         required: true
+ *         description: The ID of the file to find duplicates for
+ *     responses:
+ *       200:
+ *         description: Returns an array of files that are duplicates of the provided file.
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: array
+ *               items:
+ *                 type: object
+ *                 properties:
+ *                   id:
+ *                     type: string
+ *                     description: Unique identifier for the file.
+ *                   originalName:
+ *                     type: string
+ *                     description: Original name of the file.
+ *                   hash:
+ *                     type: string
+ *                     description: File hash for identifying duplicates.
+ *       401:
+ *         description: Unauthorized, invalid or expired token.
+ *       404:
+ *         description: File not found or user does not have access.
+ */
+router.get("/:id/duplicates", authenticate, getDuplicatesByFileId);
 
 export default router;

@@ -9,6 +9,8 @@ import {
   getFileWithVersions,
   restoreFileVersion,
   downloadFileVersion,
+  findDuplicateFilesForUser,
+  findDuplicatesByFileIdForUser,
 } from "../services";
 import { errorResponse, successResponse } from "../utils";
 
@@ -175,5 +177,54 @@ export const grantPermissions = async (req: Request, res: Response) => {
     return successResponse(res, result, "Permissions granted successfully");
   } catch (error: any) {
     return errorResponse(res, "Error granting permissions", 500, error);
+  }
+};
+
+/**
+ * Controller for getting all duplicate files for an authenticated user.
+ */
+export const getDuplicateFiles = async (req: Request, res: Response) => {
+  try {
+    const {
+      // @ts-ignore
+      user: { id: userId },
+    } = req;
+
+    const result = await findDuplicateFilesForUser(userId);
+
+    return successResponse(
+      res,
+      result,
+      "Duplicate files retrieved successfully"
+    );
+  } catch (error) {
+    return errorResponse(res, "Error fetching duplicate files", 500, error);
+  }
+};
+
+/**
+ * Controller for getting duplicates by file ID for an authenticated user.
+ */
+export const getDuplicatesByFileId = async (req: Request, res: Response) => {
+  try {
+    const { id } = req.params;
+    const {
+      // @ts-ignore
+      user: { id: userId },
+    } = req;
+
+    const result = await findDuplicatesByFileIdForUser(id, userId);
+    return successResponse(
+      res,
+      result,
+      "Duplicates by file ID retrieved successfully"
+    );
+  } catch (error) {
+    return errorResponse(
+      res,
+      "Error fetching duplicates by file ID",
+      500,
+      error
+    );
   }
 };

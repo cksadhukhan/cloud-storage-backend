@@ -8,6 +8,8 @@ import {
   downloadFileVersion,
   downloadLatestFile,
   restoreFileVersion,
+  findDuplicateFilesForUser,
+  findDuplicatesByFileIdForUser,
 } from "./file.service";
 import { grantPermission } from "./permission.service";
 import { logger, requestLogger } from "./logger.service";
@@ -26,4 +28,6 @@ export {
   grantPermission,
   logger,
   requestLogger,
+  findDuplicateFilesForUser,
+  findDuplicatesByFileIdForUser,
 };
